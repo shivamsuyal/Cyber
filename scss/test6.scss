@@ -1,0 +1,277 @@
+
+html,body{
+    margin: 0;
+    padding: 0;
+    /* Hide scrollbar */
+    &::-webkit-scrollbar {
+        display: none;
+    }
+    &{
+        -ms-overflow-style: none;  
+        scrollbar-width: none; 
+    } 
+    /* Hide scrollbar */
+    // padding-bottom: 100vh;
+}
+
+
+#BG{
+    z-index: -10;
+    position: fixed;
+    top: 0;left: 0;right: 0;bottom: 0;
+    height: 100vh;
+    width: 100vw;
+    background-image: radial-gradient(59.58% 708.79% at 100% 44.53%, rgba(11, 12, 21, 0.5) 0%, #0B0C15 100%), url('../assests/bg2.png');
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: contain;
+    // #BGblack{
+    //     min-height: 100vh;
+    //     min-width: 100vw;
+    //     background-color: black;
+    // }
+    // #BGradial{
+    //     position: absolute;
+    //     top: 40%;left: 40%;right: 0;bottom: 0;
+    //     background-color: white;
+    //     height: 5rem;
+    //     width: 5rem;
+    // }
+}
+
+$highlight-color-1 : #01FFFF;
+$highlight-color-2 : #3FFF00;
+$nav-height : 3.5rem;
+
+header{
+    z-index: 100;
+    position: fixed;
+    width: 95vw;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    column-gap: 1rem;
+    height: $nav-height;
+    font-family: 'Inconsolata', monospace;
+    font-weight: 400;
+    // font-size: calc(3vw - 1.3vmax); // responsive mode
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    #navLinks{
+        position: relative;
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        column-gap: 1rem;
+        // background-color: #001ba9;
+        #navMarker{
+            position: absolute;
+            background-color: #eee;
+            right: 0;
+            height: 2px;
+            width: 0;
+            bottom: -8px;
+            transition: 0.5s;
+            border-radius: 4px;
+        }
+        .activeLink{
+            &::after{
+                width: 100% !important;
+            }
+        }
+        .nonActiveLink{
+            &::after{
+                width: 0 !important;
+            }
+        }
+        a{
+            $this-padding : 0.3rem 0.5rem;
+            // color: white;
+            color: rgba($color: #eee, $alpha: 0.6);
+            margin: $this-padding;
+            // padding: $this-padding;
+            text-decoration: none;
+            cursor: pointer;
+            position: relative;
+            &::after{
+                content: attr(data-name);
+                position: absolute;
+                background-clip: text;
+                width: 0;
+                height: 100%;
+                overflow: hidden;
+                top: 0;bottom: 0;left: 0;right: 0;
+                font-weight: 400;
+                color: $highlight-color-1;
+                transition: 700ms;
+            }
+        }
+    }  
+}
+// span{
+//     cursor: pointer;
+//     color: white;
+//     margin: 0 1rem;
+//     padding: 0.4rem 0.6rem;
+//     border: 1px solid $highlight-color-1;
+//     border-radius: 0.5rem;
+//     background-color: transparent;
+//     // background-color: #000000;
+//     transition: all 1000ms;
+//     &:hover{
+//         background-color: $highlight-color-1;
+//         color: black;
+//     }
+// }
+
+
+
+$label-color : grey;
+$mainTxt-color : white;
+$mainTxt-size : 0.9rem;
+$group-color : #323645;
+
+#content{
+    width: 40vw;
+    min-height: 100vh;
+    // background-color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 0;
+    row-gap: 3rem;
+    #txt{
+        color: $mainTxt-color;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        width: 90%;
+        align-items: flex-end;
+        // column-gap: 0.3rem;
+        row-gap: 0.5rem;
+        span{
+            flex-shrink: 0;
+            width: 100%;
+            // background-color: antiquewhite;
+            color: $label-color;
+            font-size: 0.7rem;
+            font-family: 'Inconsolata';
+            letter-spacing: 1px;
+        }
+        p{
+            font-family: 'Comfortaa';
+            margin: 0;
+            font-size: 2rem;
+            height: fit-content;
+        }
+        svg{
+            height: 1rem;
+            width: auto;
+            $svg-fill : #1D90F5;
+            fill : $svg-fill;
+            transform: rotate(13deg);
+            path {
+                fill: $svg-fill;
+            }
+        }
+    }
+}
+
+form{
+    // background-color: bisque;
+    display: flex;
+    // flex-direction: column;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    row-gap: 1rem;
+    width: 80%;
+    
+
+    .fgp{
+        display: flex;
+        flex-direction: column;
+        background-color: $group-color ;
+        border-radius: 0.7rem;
+        padding: 0.7rem 0.4rem;
+        row-gap:0.4rem ;
+        width: 100%;
+        label{
+            font-size: 0.6rem;
+            color: $label-color;
+            font-family: 'Roboto Mono';
+            display: flex;
+            // justify-content: center;
+            align-items: center;
+            column-gap: 0.5rem;
+        }
+        input,select{
+            background-color: transparent;
+            font-family: 'Open Sans';
+            width: 100%;
+            letter-spacing: 1px;
+            border: none;
+            color: $mainTxt-color;
+            font-size: $mainTxt-size;
+            &:focus{
+                outline: none;
+            }
+        }
+        select{
+            background-color: $group-color;
+            font-family: 'Open Sans' !important;
+            option{
+                font-family: 'Open Sans' !important;
+                letter-spacing: 0.5px;
+            }
+        }
+
+        &:nth-of-type(4),&:nth-of-type(5){
+            width: 45%;
+        }
+        &:last-of-type{
+            background-color: transparent;
+            label:nth-of-type(2){
+                color: $mainTxt-color;
+                font-size: $mainTxt-size;
+            }
+        }
+
+        svg{
+            $svg-color : white;
+            fill : $svg-color;
+            overflow: visible;
+            height: 1rem;
+            width: auto;
+            path{
+                overflow: visible;
+                fill: $svg-color;
+            }
+        }
+
+    }
+    button{
+        $button-color :#1C8FF3;
+        margin: 0 auto;
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+        color: white;
+        border: 1px solid $button-color;
+        border-radius: 0.8rem;
+        background-color: transparent;
+        cursor: pointer;
+        transition: 700ms;
+        font-family: 'Comfortaa';
+        font-weight: 400;
+        &:hover{
+            transform: scale(1.07);
+            background-color: $button-color;
+            color: black;
+            font-weight: 500;
+        }
+    }
+    
+}
+
+
+
