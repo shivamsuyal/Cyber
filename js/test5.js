@@ -20,6 +20,9 @@ setInterval(()=>{
 document.documentElement.style.setProperty('--cardW', document.documentElement.offsetWidth/5-20+'px');
 document.documentElement.style.setProperty('--cardH', document.documentElement.offsetWidth/5-20+'px');
 
+document.documentElement.style.setProperty('--cardAW', document.documentElement.offsetWidth/3-20+'px');
+// document.documentElement.style.setProperty('--cardAH', document.documentElement.offsetWidth/3-20+'px');
+
 const bugS = 20 //added extra
 const start = "center 30%"
 const dur = 40
@@ -110,7 +113,7 @@ window.onload = ()=>{
             bgGrid.children[(i*cols)+j].dataset.delay = "4"
         }
     }
-    bgTimeline = gsap.timeline({
+    gsap.timeline({
         // defaults: {duration: 5},
         scrollTrigger : {
             trigger : bgGrid,
@@ -136,10 +139,111 @@ window.onload = ()=>{
             scale : 2,
         })
         .to("#bgGrid .bgGrid__item",{opacity : 0,duration : 20},"<")
-        .to("#mainTxt p",{y: 0,fontSize : "2rem",padding : "1rem 2rem",duration : 20},"<20")
+        .to("#mainTxt p",{y: 5,fontSize : "2rem",padding : "1rem 2rem",duration : 20},"<20")
         .to("#people",{opacity : 1,zIndex : 350,duration : 20})
-        // duration : 40, opacity :0,stagger : 1})    
+        // duration : 40, opacity :0,stagger : 1})   
+        
+    
+
 }
+
+gsap.timeline({
+    scrollTrigger : {
+        trigger : "#adv",
+        start : "bottom center",
+        // markers : true,
+        scroller : "#people",
+        scrub : true,
+        // pin : true,
+        // pinType : 'transform',
+        toggleActions : "restart pause reverse pause",
+    }
+})
+.from("#pres",{opacity : 0, duration : 10})
+.to("#adv",{opacity : 0, duration : 10},"<")
+
+gsap.timeline({
+    scrollTrigger : {
+        trigger : "#pres",
+        start : "bottom center",
+        // markers : true,
+        scroller : "#people",
+        scrub : true,
+        // pin : true,
+        // pinType : 'transform',
+        toggleActions : "restart pause reverse pause",
+    }
+})
+.from("#sec",{opacity : 0, duration : 10})
+.to("#pres",{opacity : 0, duration : 10},"<")
+
+
+gsap.timeline({
+    scrollTrigger : {
+        trigger : "#sec",
+        start : "bottom center",
+        // markers : true,
+        scroller : "#people",
+        scrub : true,
+        // pin : true,
+        // pinType : 'transform',
+        toggleActions : "restart pause reverse pause",
+    }
+})
+.from("#t",{opacity : 0, duration : 10})
+.to("#sec",{opacity : 0, duration : 10},"<")
+
+gsap.timeline({
+    scrollTrigger : {
+        trigger : "#t",
+        start : "bottom center",
+        // markers : true,
+        scroller : "#people",
+        scrub : true,
+        // pin : true,
+        // pinType : 'transform',
+        toggleActions : "restart pause reverse pause",
+    }
+})
+.from("#heads",{opacity : 0, duration : 10})
+.to("#t",{opacity : 0, duration : 10},"<")
+
+gsap.timeline({
+    scrollTrigger : {
+        trigger : "#heads",
+        start : "bottom center",
+        // markers : true,
+        scroller : "#people",
+        scrub : true,
+        // pin : true,
+        // pinType : 'transform',
+        toggleActions : "restart pause reverse pause",
+    }
+})
+.from("#mis",{opacity : 0, duration : 10})
+.to("#heads",{opacity : 0, duration : 10},"<")
+
+misCARD = document.querySelector("#mis .cardContainer")
+gsap.timeline({
+    scrollTrigger : {
+        trigger : "#mis",
+        start : "center center",
+        scroller : "#people",
+        pinType: "fixed",
+        // markers : true,
+        scrub : true,
+        pin : true,
+        toggleActions : "restart pause reverse pause",
+    }
+})
+.to(misCARD,
+    {
+        x : (misCARD.offsetLeft - 10) * -1,
+        duration : 20
+    }
+)
+.to("#misTxt",{opacity : 1,duration : 10})
+
 
 
 obj1 = new IntersectionObserver((entries)=>{
@@ -151,9 +255,29 @@ obj1 = new IntersectionObserver((entries)=>{
         }
     })
 },{
-    threshold : 0.9
+    threshold : 0.8
 })
 
 obj1.observe(document.querySelector("footer"))
+
+
+
+// function connectSVG(e1,e2){
+//     x1 = e1.offsetLeft - e1.offsetWidth/2
+//     y1 = e1.offsetTop + e1.offsetHeight
+
+//     x2 = e2.offsetLeft - e2.offsetWidth/2
+//     y2 = e2.offsetHeight
+
+//     var svg = `
+//     <svg height="${y2-y1}" width="${Math.abs(x1-x2)}">
+//         <line x1="0" y1="0" x2="200" y2="200" style="stroke:rgb(255,0,0);stroke-width:2" />
+//     </svg>
+//   `
+//     document.body.insertAdjacentHTML('beforeend',svg)
+//     console.log(svg)
+// }
+
+// connectSVG(document.querySelector("#adv").children[4],document.querySelector("#pres").children[0])
 
 

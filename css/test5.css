@@ -1,6 +1,9 @@
 :root {
   --cardW: 0;
   --cardH: 0;
+  --cardAW: 0;
+  --cardAH: 0;
+  --padding-top: 0;
   --breath: 40%;
 }
 
@@ -33,9 +36,20 @@ html, body {
   scrollbar-width: none;
 }
 
+.Lsvg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  background-color: red;
+}
+
 #bcGrad1 {
   position: fixed;
-  z-index: -20;
+  z-index: 200;
   height: 100vh;
   width: 100vw;
   -webkit-transition: all 1000ms;
@@ -119,6 +133,7 @@ body {
   position: fixed;
   top: 0;
   opacity: 0;
+  padding-top: calc(1rem + 10px);
   height: 100vh;
   width: 100%;
   overflow-y: scroll;
@@ -147,8 +162,6 @@ body {
   gap: 0.7rem 15.5rem;
   height: 100vh;
   width: 100vw;
-  max-height: 100vh;
-  max-width: 100vw;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   padding: 4rem 0;
@@ -156,16 +169,25 @@ body {
 #people #adv {
   display: grid;
   width: 100vw;
-  grid-template-columns: repeat(4, var(--cardW));
-  gap: 0 4rem;
+  grid-template-columns: repeat(3, var(--cardAW));
+  gap: 2rem 4rem;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   padding: 4rem 1rem;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
-#people #adv .card {
-  -webkit-box-flex: 0;
-      -ms-flex: none;
-          flex: none;
+#people #adv .cardContainer {
+  -ms-flex-item-align: center;
+      align-self: center;
+  justify-self: center;
 }
 #people #heads {
   display: grid;
@@ -215,19 +237,23 @@ body {
           align-items: center;
   opacity: 0;
 }
-#people .card {
+#people .cardContainer {
+  background-color: #fcfbf4;
+  border-radius: 1rem;
+  overflow: hidden;
+  max-width: 250px;
+}
+#people .cardContainer .card {
+  -webkit-box-shadow: inset 0 0 15px 1px #000000, 0 1px 10px 0px black;
+          box-shadow: inset 0 0 15px 1px #000000, 0 1px 10px 0px black;
   position: relative;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   width: 250px;
-  height: 350px;
-  min-height: 350px;
-  max-height: 350px;
+  height: 310px;
+  min-height: 310px;
+  max-height: 310px;
   margin: 0;
-  border-radius: 1rem;
-  overflow: hidden;
-  -webkit-box-shadow: inset 0 0 15px 1px #000000;
-          box-shadow: inset 0 0 15px 1px #000000;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -238,18 +264,22 @@ body {
       -ms-flex-align: end;
           align-items: flex-end;
 }
-#people .card:hover .fImg {
+#people .cardContainer .card:hover .fImg {
   border-radius: 3rem;
   -webkit-box-shadow: 0 0 20px black;
           box-shadow: 0 0 20px black;
   -webkit-transform: scale(0.4) translateY(-5rem);
           transform: scale(0.4) translateY(-5rem);
 }
-#people .card:hover .cardBody .cardInfo p {
+#people .cardContainer .card:hover .cardBody .cardInfo p {
   -webkit-animation: tracking-in-expand 1200ms 700ms cubic-bezier(0.215, 0.61, 0.355, 1) both !important;
           animation: tracking-in-expand 1200ms 700ms cubic-bezier(0.215, 0.61, 0.355, 1) both !important;
 }
-#people .card .bImg {
+#people .cardContainer .card:hover ~ .cname {
+  background-color: lightgrey;
+  opacity: 0.5;
+}
+#people .cardContainer .card .bImg {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -261,20 +291,20 @@ body {
           filter: grayscale(100%) blur(1.5px);
   pointer-events: none;
 }
-#people .card .cardBody {
-  height: 60%;
+#people .cardContainer .card .cardBody {
+  height: 68%;
   width: 100%;
   display: grid;
   grid-template-rows: 33% 66%;
 }
-#people .card .cardBody .cardCircle {
+#people .cardContainer .card .cardBody .cardCircle {
   -webkit-transform: translateY(50%);
           transform: translateY(50%);
   background-color: #fcfbf4;
   -webkit-clip-path: ellipse(50% 49% at 50% 50%);
           clip-path: ellipse(50% 49% at 50% 50%);
 }
-#people .card .cardBody .cardInfo {
+#people .cardContainer .card .cardBody .cardInfo {
   background-color: #fcfbf4;
   top: 2px;
   z-index: 10;
@@ -288,7 +318,7 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
 }
-#people .card .cardBody .cardInfo p {
+#people .cardContainer .card .cardBody .cardInfo p {
   margin: 0;
   padding: 0;
   font-family: "Comfortaa";
@@ -301,7 +331,7 @@ body {
   -webkit-transition: all 1000ms;
   transition: all 1000ms;
 }
-#people .card .cardBody .cardInfo .links {
+#people .cardContainer .card .cardBody .cardInfo .links {
   height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -312,7 +342,7 @@ body {
       -ms-flex-align: center;
           align-items: center;
 }
-#people .card .cardBody .cardInfo .links svg {
+#people .cardContainer .card .cardBody .cardInfo .links svg {
   margin: 0;
   height: 2.5rem;
   width: auto;
@@ -320,11 +350,11 @@ body {
   border-bottom: 3px solid black;
   cursor: pointer;
 }
-#people .card .cardBody .cardInfo .links svg:hover {
+#people .cardContainer .card .cardBody .cardInfo .links svg:hover {
   -webkit-animation: jello-horizontal 0.9s both;
           animation: jello-horizontal 0.9s both;
 }
-#people .card .cardBody .fImg {
+#people .cardContainer .card .cardBody .fImg {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -341,89 +371,106 @@ body {
   transition: all 1000ms;
   pointer-events: none;
 }
+#people .cardContainer .cname {
+  padding: 0.5rem 0 1rem 0;
+  -webkit-transition: all 700ms;
+  transition: all 700ms;
+}
+#people .cardContainer .cname p {
+  color: #000000;
+  margin: 0;
+  text-align: center;
+}
 
 footer {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  padding: 0 2rem;
+  display: grid;
+  grid-template-rows: repeat(2, 50%);
+  background: -webkit-gradient(linear, left bottom, left top, from(#0091aa), color-stop(#006b7c), color-stop(#004752), to(#00262c));
+  background: linear-gradient(0deg, #0091aa, #006b7c, #004752, #00262c);
+  height: 50vh;
+  width: 100vw;
+}
+footer #foot1 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  background-color: #004855;
-  height: 100vh;
-  width: 100vw;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  padding: 2rem 0;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-bottom: 1px solid white;
 }
-footer #logo img {
-  margin-top: 1rem;
-  height: 21vh;
+footer #foot1 #logo {
+  width: 20%;
+  padding-left: 2rem;
+}
+footer #foot1 #logo img {
+  height: 20vh;
   width: auto;
-  border-bottom: 2px solid black;
-  padding-bottom: 0.5rem;
 }
-footer #links {
+footer #foot1 #links {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: 100%;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-column-gap: 4rem;
+     -moz-column-gap: 4rem;
+          column-gap: 4rem;
 }
-footer #links ul {
-  height: 100%;
-  width: 100%;
+footer #foot1 #links a {
+  color: white;
+  text-decoration: none;
+  opacity: 0.7;
+  -webkit-transition: opacity 300ms, -webkit-transform 700ms;
+  transition: opacity 300ms, -webkit-transform 700ms;
+  transition: opacity 300ms, transform 700ms;
+  transition: opacity 300ms, transform 700ms, -webkit-transform 700ms;
+}
+footer #foot1 #links a:hover {
+  opacity: 1;
+  -webkit-transform: scale(1.08);
+          transform: scale(1.08);
+  -webkit-filter: brightness(1.1);
+          filter: brightness(1.1);
+}
+footer #foot2 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  row-gap: 1rem;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  border-right: 2px dashed black;
+  gap: 1rem;
 }
-footer #links ul:last-child {
-  border: none;
+footer #foot2 #footSVG {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 2rem;
 }
-footer #links ul li {
-  list-style: none;
-  font-size: 1.3rem;
-  letter-spacing: 1px;
+footer #foot2 #footSVG svg {
+  height: 2rem;
+  width: auto;
+  overflow: visible;
   cursor: pointer;
-  position: relative;
+  -webkit-transition: 500ms;
+  transition: 500ms;
+  fill: white;
 }
-footer #links ul li:hover::after {
-  width: 100%;
-}
-footer #links ul li::after {
-  content: attr(attr-val);
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  letter-spacing: 1px;
-  height: 100%;
-  width: 0;
-  color: aqua;
-  overflow: hidden;
-  opacity: 0.7;
-  -webkit-transition: 500ms ease-in-out;
-  transition: 500ms ease-in-out;
+footer #foot2 #footSVG svg path {
+  fill: white;
 }
