@@ -139,13 +139,13 @@ $group-color : #323645;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 1rem 0;
+    padding: $nav-height 0 1rem 0;
     row-gap: 3rem;
     #txt{
         color: $mainTxt-color;
         display: flex;
         flex-wrap: wrap;
-        justify-content: flex-start;
+        justify-content: center;
         width: 90%;
         align-items: flex-end;
         // column-gap: 0.3rem;
@@ -154,6 +154,7 @@ $group-color : #323645;
             flex-shrink: 0;
             width: 100%;
             // background-color: antiquewhite;
+            text-align: center;
             color: $label-color;
             font-size: 0.7rem;
             font-family: 'Inconsolata';
@@ -190,12 +191,16 @@ form{
 
     .fgp{
         display: flex;
-        flex-direction: column;
+        // flex-direction: column;
+        justify-content: center;
+        align-items: center;
         background-color: $group-color ;
         border-radius: 0.7rem;
         padding: 0.7rem 0.4rem;
-        row-gap:0.4rem ;
+        column-gap:0.4rem ;
         width: 100%;
+        // height: fit-content;
+        // margin: auto 0;
         label{
             font-size: 0.6rem;
             color: $label-color;
@@ -225,7 +230,14 @@ form{
                 letter-spacing: 0.5px;
             }
         }
-
+        &:nth-of-type(4){
+            flex-direction: column;
+            // justify-content: flex-start;
+            align-items: flex-start;
+            input{
+                text-align: center;
+            }
+        }
         &:nth-of-type(4),&:nth-of-type(5){
             width: 45%;
         }
