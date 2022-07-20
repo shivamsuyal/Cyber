@@ -21,8 +21,8 @@ html,body{
     top: 0;left: 0;right: 0;bottom: 0;
     height: 100vh;
     width: 100vw;
-    background-image: radial-gradient(59.58% 708.79% at 100% 44.53%, rgba(11, 12, 21, 0.5) 0%, #0B0C15 100%), url('../assests/bg2.png');
-    background-position: right;
+    background-image: radial-gradient(59.58% 708.79% at 100% 44.53%, rgba(11, 12, 21, 0.5) 0%, #0B0C15 100%), url('../assests/bg1.jpg');
+    background-position: 133% 0;
     background-repeat: no-repeat;
     background-size: contain;
     // #BGblack{
@@ -234,6 +234,9 @@ form{
             flex-direction: column;
             // justify-content: flex-start;
             align-items: flex-start;
+            label{
+                column-gap: 1rem;
+            }
             input{
                 text-align: center;
             }
@@ -255,6 +258,7 @@ form{
             overflow: visible;
             height: 1rem;
             width: auto;
+            opacity: 0.6;
             path{
                 overflow: visible;
                 fill: $svg-color;
