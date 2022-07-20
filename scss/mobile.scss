@@ -1,0 +1,86 @@
+.mobile-header{
+    $svg1-color : black;
+    $bg1-color : white;
+    // display: flex;
+    // height: fit-content;
+    // background-color: $bg1-color;
+    overflow: hidden;
+    gap: 0;
+    // justify-content: center;
+    // align-items: center;
+    #mhLinks{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.25rem 0.55rem;
+        flex-wrap: wrap;
+        background-color: $bg1-color;
+        width: 0px;
+        height: 10%;
+        overflow: hidden;
+        border-radius: 1rem;
+        box-sizing: border-box;
+        a{
+            margin: 0;
+            opacity: 0;
+            color: $svg1-color;
+            transition: all 500ms ease-in-out;
+            text-decoration: none;
+        }
+    }
+    
+    #mhSVG{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $bg1-color;
+        height: 100%;
+        border-radius: 1rem;
+        opacity: 1;
+        transition: all 1000ms;
+        &[data-open=false]{
+            opacity: 0.4;
+        }
+    }
+    
+
+    svg{
+        height: 3rem;
+        width: auto;
+        fill: $svg1-color;
+    }
+    .ham {
+        cursor: pointer;
+        -webkit-tap-highlight-color: transparent;
+        transition: transform 700ms;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+    .hamRotate.active {
+        transform: rotate(45deg);
+        .top {
+            stroke-dashoffset: -98px;
+        }
+        .bottom {
+            stroke-dashoffset: -138px;
+        }
+    }
+    .line {
+        fill:none;
+        transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+        stroke:$svg1-color;
+        stroke-width:5.5;
+        stroke-linecap:round;
+    }
+    .ham1{
+        .top {
+            stroke-dasharray: 40 139;
+        }
+        .bottom {
+            stroke-dasharray: 40 180;
+        }
+    }
+}
+

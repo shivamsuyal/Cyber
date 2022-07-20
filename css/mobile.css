@@ -1,0 +1,94 @@
+.mobile-header {
+  overflow: hidden;
+  gap: 0;
+}
+.mobile-header #mhLinks {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0.25rem 0.55rem;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  background-color: white;
+  width: 0px;
+  height: 10%;
+  overflow: hidden;
+  border-radius: 1rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.mobile-header #mhLinks a {
+  margin: 0;
+  opacity: 0;
+  color: black;
+  -webkit-transition: all 500ms ease-in-out;
+  transition: all 500ms ease-in-out;
+  text-decoration: none;
+}
+.mobile-header #mhSVG {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: white;
+  height: 100%;
+  border-radius: 1rem;
+  opacity: 1;
+  -webkit-transition: all 1000ms;
+  transition: all 1000ms;
+}
+.mobile-header #mhSVG[data-open=false] {
+  opacity: 0.4;
+}
+.mobile-header svg {
+  height: 3rem;
+  width: auto;
+  fill: black;
+}
+.mobile-header .ham {
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-transition: -webkit-transform 700ms;
+  transition: -webkit-transform 700ms;
+  transition: transform 700ms;
+  transition: transform 700ms, -webkit-transform 700ms;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.mobile-header .hamRotate.active {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+.mobile-header .hamRotate.active .top {
+  stroke-dashoffset: -98px;
+}
+.mobile-header .hamRotate.active .bottom {
+  stroke-dashoffset: -138px;
+}
+.mobile-header .line {
+  fill: none;
+  -webkit-transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+  transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+  stroke: black;
+  stroke-width: 5.5;
+  stroke-linecap: round;
+}
+.mobile-header .ham1 .top {
+  stroke-dasharray: 40 139;
+}
+.mobile-header .ham1 .bottom {
+  stroke-dasharray: 40 180;
+}

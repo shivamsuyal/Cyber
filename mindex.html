@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title> 
+    <!-- FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400&family=Inconsolata:wght@300;400&family=Jost:wght@300;400;500&family=Quicksand:wght@300;400;500&family=Roboto+Mono:wght@300;400&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./css/splide.css">
+    <link rel="stylesheet" href="./css/index_extra.css">
+    <link rel="stylesheet" href="./css/mindex.css">
+    <link rel="stylesheet" href="./css/mobile.css">
+    <link rel="stylesheet" href="./css/responsive.css"> 
+    <!-- JS -->
+    <script src="./js/gsap.js" defer></script>
+    <script src="./js/gsap-scroll.js" defer></script>
+    <script src="./js/splide.js" defer></script>
+    <script src="./js/tilt.js" defer></script>
+    <script src="./js/mindex.js" defer></script>
+</head>
+<body>
+    <div id="popUPBG">
+        <div id="pContent">
+            <svg id="cut" onclick="popUP1(0)" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-circle-fill" viewBox="0 0 16 16">
+                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z"/>
+            </svg>
+            <div id="popHead">
+                <img src="./assests/temp1.jpg" alt="">
+            </div>
+            <div id="pBody">
+                <p>Come and Become A Member</p>
+                <button>Register</button>
+            </div>
+        </div>
+    </div>
+    <div id="bcGrad1"></div>
+    <div id="bcGrad2"></div>
+    <div id="bcGrad3"></div>
+    <div id="bcGrad4"></div>
+    <div id="bcGrad5"></div>
+    <div id="blurBG"></div>
+    <header class="desktop-header">
+        <div id="navLinks">
+            <div id="navMarker"></div>
+            <a href="#page1" data-name="HOME">HOME</a>
+            <a href="#page2" data-name="ABOUT">ABOUT</a>
+            <a href="#page3" data-name="EVENTS">EVENTS</a>
+            <a href="#page4" data-name="TEAM">TEAM</a>
+            <a href="#page5" data-name="CONTACT">CONTACT</a>
+        </div>
+        <span data-tilt data-tilt-reverse="true">REGISTER</span>
+    </header>
+    <header class="mobile-header">
+        <div id="mhLinks">
+            <a href="#page1" data-name="HOME">HOME</a>
+            <a href="#page2" data-name="ABOUT">ABOUT</a>
+            <a href="#page3" data-name="EVENTS">EVENTS</a>
+            <a href="#page4" data-name="TEAM">TEAM</a>
+            <a href="#page5" data-name="CONTACT">CONTACT</a>
+        </div>
+        <div id="mhSVG" data-open="false">
+            <svg class="ham hamRotate ham1" viewBox="0 0 100 100" width="80" onclick="this.classList.toggle('active')">
+                <path class="line top" d="m 30,33 h 40 c 0,0 9.044436,-0.654587 9.044436,-8.508902 0,-7.854315 -8.024349,-11.958003 -14.89975,-10.85914 -6.875401,1.098863 -13.637059,4.171617 -13.637059,16.368042 v 40" />
+                <path class="line middle" d="m 30,50 h 40" />
+                <path class="line bottom" d="m 30,67 h 40 c 12.796276,0 15.357889,-11.717785 15.357889,-26.851538 0,-15.133752 -4.786586,-27.274118 -16.667516,-27.274118 -11.88093,0 -18.499247,6.994427 -18.435284,17.125656 l 0.252538,40" />
+            </svg>
+        </div>
+    </header>
+    <!-- <section id="pages"> -->
+        <section id="page1">
+            <div id="homeTxt" >
+                <div id="homeTxtHead" data-animated="true" style="display: flex;column-gap: 1rem;">
+                    <h1>Cyber</h1>
+                    <h1>Sentinels</h1>
+                </div>
+                <p data-animated="true">We search the <span>TRUTH</span> in<br> 1 n 0s</p>
+            </div>
+            <div id="homeImg">
+                <div id="homeImg__content">
+                    <div id="cyberImg" ></div>
+                    <svg id="pedestal" width="301" height="148" viewBox="0 0 301 148" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <ellipse class="moveUp4" cx="150.5" cy="126" rx="150.5" ry="22" fill="#0B0708"/>
+                        <ellipse class="moveUp3" cx="151.042" cy="118.714" rx="142.793" ry="22.1429" fill="#0B0708" stroke="#0028EC" stroke-width="1.4" stroke-miterlimit="1.44008" stroke-dasharray="27 14"/>
+                        <ellipse class="moveUp2" cx="148.483" cy="110.143" rx="131.022" ry="22.1429" fill="white"/>
+                        <path id="light" d="M29.7293 99.881L0 0C149.844 1.49122 305.667 0.178787 299.842 0C299.842 0 267.08 103.996 267.08 99.881" fill="url(#paint0_linear_2_9)"/>
+                        <ellipse class="moveUp1" cx="148.483" cy="100.143" rx="118.738" ry="22.1429" fill="url(#paint1_linear_2_9)"/>
+                        <defs>
+                        <linearGradient id="paint0_linear_2_9" x1="150" y1="77" x2="150" y2="-3.03964e-06" gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#D8D8D8"/>
+                        <stop offset="1" stop-color="#D8D8D8" stop-opacity="0"/>
+                        </linearGradient>
+                        <linearGradient id="paint1_linear_2_9" x1="148.483" y1="122" x2="148.483" y2="77.9997" gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#0028EC"/>
+                        <stop offset="1" stop-color="#000F58"/>
+                        </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+            </div>
+        </section>
+        <section id="page2">
+            <div id="aboutImg">
+                <span></span>
+                <span></span>
+                <img data-reverse="false" src="./assests/index.jpg" alt="">
+                <span></span>
+                <span></span>
+            </div>
+            <div id="aboutTxt">
+                <div id="move-1">Welcome</div>
+                <div id="move-2">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolore pariatur ex quasi, facere similique aliquid esse eum? Voluptatem, repellat perspiciatis, quod atque praesentium magni laudantium molestias nulla recusandae quis quisquam.</div>
+            </div>
+        </section>
+        <section id="page3">
+            <div class="splide">
+                <div class="splide__track">
+                      <ul class="splide__list">
+                            <li class="splide__slide" data-color="#bc0001,#7d0001,#3f0000">
+                                <div class="boundry">
+                                    <div class="face bckFace">
+                                        1 
+                                    </div>
+                                    <div class="face fwdFace">
+                                        <img src="./assests/events/evt1.jpg" alt="">
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="splide__slide" data-color="#303030, #202020, #101010">
+                                <div class="boundry">
+                                    <div class="face bckFace">
+                                        1 
+                                    </div>
+                                    <div class="face fwdFace">
+                                        <img src="./assests/events/evt2.jpg" alt="">
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="splide__slide" data-color="#183018, #102010, #081008">
+                                <div class="boundry">
+                                    <div class="face bckFace">
+                                        1 
+                                    </div>
+                                    <div class="face fwdFace">
+                                        <img src="./assests/events/evt3.jpg" alt="">
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="splide__slide">
+                                <div class="boundry">
+                                    <div class="face bckFace">
+                                        1 
+                                    </div>
+                                    <div class="face fwdFace">
+                                        <img src="./assests/events/demo1.jpg" alt="">
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="splide__slide">
+                                <div class="boundry">
+                                    <div class="face bckFace">
+                                        1 
+                                    </div>
+                                    <div class="face fwdFace">
+                                        <img src="./assests/events/demo1.jpg" alt="">
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="splide__slide" >
+                                <div class="boundry">
+                                    <div class="face bckFace">
+                                        1 
+                                    </div>
+                                    <div class="face fwdFace">
+                                        <img src="./assests/events/demo1.jpg" alt="">
+                                    </div>
+                                </div>
+                            </li>
+                      </ul>
+                </div>
+              </div>
+        </section>
+        <section id="page4">
+            <div class="title1">
+                <h1>Meet Our Team</h1>
+                <div id="gyan">
+                    <div id="hashTags">
+                        <tt></tt>
+                        <span>|</span>
+                    </div>
+                    <p>
+                        blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah 
+                    </p>
+                </div>
+            </div>
+            <div id="people">
+                <div class="card hid1">
+                    <img class="bImg" src="./assests/person1.jpg" alt="">
+                    <div class="cardBody">
+                        <div class="cardCircle"></div>
+                        <div class="cardInfo">
+                            <p>Name</p>
+                            <div class="links">
+                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 382 382" style="enable-background:new 0 0 382 382;" xml:space="preserve">
+                                    <path style="fill:#0077B7;" d="M347.445,0H34.555C15.471,0,0,15.471,0,34.555v312.889C0,366.529,15.471,382,34.555,382h312.889  C366.529,382,382,366.529,382,347.444V34.555C382,15.471,366.529,0,347.445,0z M118.207,329.844c0,5.554-4.502,10.056-10.056,10.056  H65.345c-5.554,0-10.056-4.502-10.056-10.056V150.403c0-5.554,4.502-10.056,10.056-10.056h42.806  c5.554,0,10.056,4.502,10.056,10.056V329.844z M86.748,123.432c-22.459,0-40.666-18.207-40.666-40.666S64.289,42.1,86.748,42.1  s40.666,18.207,40.666,40.666S109.208,123.432,86.748,123.432z M341.91,330.654c0,5.106-4.14,9.246-9.246,9.246H286.73  c-5.106,0-9.246-4.14-9.246-9.246v-84.168c0-12.556,3.683-55.021-32.813-55.021c-28.309,0-34.051,29.066-35.204,42.11v97.079  c0,5.106-4.139,9.246-9.246,9.246h-44.426c-5.106,0-9.246-4.14-9.246-9.246V149.593c0-5.106,4.14-9.246,9.246-9.246h44.426  c5.106,0,9.246,4.14,9.246,9.246v15.655c10.497-15.753,26.097-27.912,59.312-27.912c73.552,0,73.131,68.716,73.131,106.472  L341.91,330.654L341.91,330.654z"/>
+                                </svg>
+                                <svg width="32px" height="32px" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M16 0.396c-8.839 0-16 7.167-16 16 0 7.073 4.584 13.068 10.937 15.183 0.803 0.151 1.093-0.344 1.093-0.772 0-0.38-0.009-1.385-0.015-2.719-4.453 0.964-5.391-2.151-5.391-2.151-0.729-1.844-1.781-2.339-1.781-2.339-1.448-0.989 0.115-0.968 0.115-0.968 1.604 0.109 2.448 1.645 2.448 1.645 1.427 2.448 3.744 1.74 4.661 1.328 0.14-1.031 0.557-1.74 1.011-2.135-3.552-0.401-7.287-1.776-7.287-7.907 0-1.751 0.62-3.177 1.645-4.297-0.177-0.401-0.719-2.031 0.141-4.235 0 0 1.339-0.427 4.4 1.641 1.281-0.355 2.641-0.532 4-0.541 1.36 0.009 2.719 0.187 4 0.541 3.043-2.068 4.381-1.641 4.381-1.641 0.859 2.204 0.317 3.833 0.161 4.235 1.015 1.12 1.635 2.547 1.635 4.297 0 6.145-3.74 7.5-7.296 7.891 0.556 0.479 1.077 1.464 1.077 2.959 0 2.14-0.020 3.864-0.020 4.385 0 0.416 0.28 0.916 1.104 0.755 6.4-2.093 10.979-8.093 10.979-15.156 0-8.833-7.161-16-16-16z"/>
+                                  </svg>
+                            </div>
+                        </div>
+                        <img class="fImg" src="./assests/person1.jpg" alt="">
+                    </div>
+                </div>
+                <div class="card hid1">
+                    <img class="bImg" src="./assests/person1.jpg" alt="">
+                    <div class="cardBody">
+                        <div class="cardCircle"></div>
+                        <div class="cardInfo">
+                            <p>Name</p>
+                            <div class="links">
+                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 382 382" style="enable-background:new 0 0 382 382;" xml:space="preserve">
+                                    <path style="fill:#0077B7;" d="M347.445,0H34.555C15.471,0,0,15.471,0,34.555v312.889C0,366.529,15.471,382,34.555,382h312.889  C366.529,382,382,366.529,382,347.444V34.555C382,15.471,366.529,0,347.445,0z M118.207,329.844c0,5.554-4.502,10.056-10.056,10.056  H65.345c-5.554,0-10.056-4.502-10.056-10.056V150.403c0-5.554,4.502-10.056,10.056-10.056h42.806  c5.554,0,10.056,4.502,10.056,10.056V329.844z M86.748,123.432c-22.459,0-40.666-18.207-40.666-40.666S64.289,42.1,86.748,42.1  s40.666,18.207,40.666,40.666S109.208,123.432,86.748,123.432z M341.91,330.654c0,5.106-4.14,9.246-9.246,9.246H286.73  c-5.106,0-9.246-4.14-9.246-9.246v-84.168c0-12.556,3.683-55.021-32.813-55.021c-28.309,0-34.051,29.066-35.204,42.11v97.079  c0,5.106-4.139,9.246-9.246,9.246h-44.426c-5.106,0-9.246-4.14-9.246-9.246V149.593c0-5.106,4.14-9.246,9.246-9.246h44.426  c5.106,0,9.246,4.14,9.246,9.246v15.655c10.497-15.753,26.097-27.912,59.312-27.912c73.552,0,73.131,68.716,73.131,106.472  L341.91,330.654L341.91,330.654z"/>
+                                </svg>
+                                <svg width="32px" height="32px" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M16 0.396c-8.839 0-16 7.167-16 16 0 7.073 4.584 13.068 10.937 15.183 0.803 0.151 1.093-0.344 1.093-0.772 0-0.38-0.009-1.385-0.015-2.719-4.453 0.964-5.391-2.151-5.391-2.151-0.729-1.844-1.781-2.339-1.781-2.339-1.448-0.989 0.115-0.968 0.115-0.968 1.604 0.109 2.448 1.645 2.448 1.645 1.427 2.448 3.744 1.74 4.661 1.328 0.14-1.031 0.557-1.74 1.011-2.135-3.552-0.401-7.287-1.776-7.287-7.907 0-1.751 0.62-3.177 1.645-4.297-0.177-0.401-0.719-2.031 0.141-4.235 0 0 1.339-0.427 4.4 1.641 1.281-0.355 2.641-0.532 4-0.541 1.36 0.009 2.719 0.187 4 0.541 3.043-2.068 4.381-1.641 4.381-1.641 0.859 2.204 0.317 3.833 0.161 4.235 1.015 1.12 1.635 2.547 1.635 4.297 0 6.145-3.74 7.5-7.296 7.891 0.556 0.479 1.077 1.464 1.077 2.959 0 2.14-0.020 3.864-0.020 4.385 0 0.416 0.28 0.916 1.104 0.755 6.4-2.093 10.979-8.093 10.979-15.156 0-8.833-7.161-16-16-16z"/>
+                                  </svg>
+                            </div>
+                        </div>
+                        <img class="fImg" src="./assests/person1.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="button1 hid1" data-tilt data-tilt-reverse="true" data-tilt-max="25" id="knowMore">
+                <p>Know More</p>
+            </div>
+        </section>
+        <section id="page5">
+            <div id="contactUs">
+                <form action="#">
+                    <div class="formField">
+                        <input type="text" placeholder=" ">
+                        <label>Name</label>
+                    </div>
+                    <div class="formField">
+                        <input type="text" placeholder=" ">
+                        <label>Email</label>
+                    </div>
+                    <div class="formField">
+                        <input type="text" placeholder=" ">
+                        <label>Phone Number</label>
+                    </div>
+                    <div class="formField">
+                        <textarea rows="5" placeholder=" "> </textarea>
+                        <label>Message</label>
+                    </div>
+                    <button data-tilt data-tilt-reverse="true" data-tilt-max="20" type="submit" class="button1">
+                        <p>Submit</p>
+                    </button>
+                </form>
+                <div id="divider"></div>
+            </div>
+            <div id="map">
+                <img src="./assests/map.png" alt="">
+            </div>
+        </section>
+    <!-- </section>  -->
+    
+</body>
+<!-- <script src="./js/jquery.js"></script> -->
+
+</html>

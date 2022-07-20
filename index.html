@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title> 
+    <!-- FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400&family=Inconsolata:wght@300;400&family=Jost:wght@300;400;500&family=Quicksand:wght@300;400;500&family=Roboto+Mono:wght@300;400&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <!-- <link rel="stylesheet" href="./css/glider.min.css"> -->
+    <link rel="stylesheet" href="./css/index_extra.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/mobile.css">
+    <link rel="stylesheet" href="./css/responsive.css"> 
+    <!-- <link rel="stylesheet" href="./css/mobile.css"> -->
+    <!-- <link rel="stylesheet" href="./css/responsive.css">  -->
+    <!-- JS -->
+    <!-- <script src="./js/jquery.js" defer></script>
+    <script src="./js/glider.min.js" defer></script> -->
+    <script src="./js/tilt.js" defer></script>
+    <script src="./js/index.js" defer></script>
+    
+</head>
+<body>
+    <div id="bcGrad1"></div>
+    <div id="bcGrad2"></div>
+    <div id="bcGrad3"></div>
+    <div id="bcGrad4"></div>
+    <div id="bcGrad5"></div>
+    <header class="desktop-header">
+        <div id="navLinks">
+            <div id="navMarker"></div>
+            <a href="#page1" data-name="HOME">HOME</a>
+            <a href="#page2" data-name="ABOUT">ABOUT</a>
+            <a href="#page3" data-name="EVENTS">EVENTS</a>
+            <a href="#page4" data-name="TEAM">TEAM</a>
+            <a href="#page5" data-name="CONTACT">CONTACT</a>
+        </div>
+        <span data-tilt data-tilt-reverse="true">REGISTER</span>
+    </header>
+    <header class="mobile-header">
+        <svg class="ham hamRotate ham1" viewBox="0 0 100 100" width="80" onclick="this.classList.toggle('active')">
+            <path class="line top" d="m 30,33 h 40 c 0,0 9.044436,-0.654587 9.044436,-8.508902 0,-7.854315 -8.024349,-11.958003 -14.89975,-10.85914 -6.875401,1.098863 -13.637059,4.171617 -13.637059,16.368042 v 40" />
+            <path class="line middle" d="m 30,50 h 40" />
+            <path class="line bottom" d="m 30,67 h 40 c 12.796276,0 15.357889,-11.717785 15.357889,-26.851538 0,-15.133752 -4.786586,-27.274118 -16.667516,-27.274118 -11.88093,0 -18.499247,6.994427 -18.435284,17.125656 l 0.252538,40" />
+          </svg>
+    </header>
+    <section id="pages">
+        <section id="page1">
+            <div id="homeTxt" >
+                <h1 data-animated="true">Cyber Sentinels</h1>
+                <p data-animated="true">We search the <span>TRUTH</span> in<br> 1 n 0s</p>
+            </div>
+            <div id="homeImg">
+                <div id="homeImg__content">
+                    <div id="cyberImg" ></div>
+                    <div data-animated="true" id="pedestalGroup">
+                        <span id="light" class="flicker"></span>
+                        <svg id="pedestal" width="373" height="70" viewBox="0 0 373 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <ellipse class="moveUp4" cx="186.5" cy="48" rx="186.5" ry="22" fill="#0B0708"/>
+                            <path class="moveUp3" d="M338.042 29.138C343.334 30.2157 347.909 31.3544 351.684 32.5437L351.469 33.2064L352.135 33.4227C355.912 34.6497 358.784 35.9143 360.698 37.192C362.644 38.4915 363.421 39.6808 363.421 40.7143C363.421 41.7478 362.644 42.9371 360.698 44.2365C358.784 45.5143 355.912 46.7789 352.135 48.0059L351.469 48.2222L351.684 48.8849C347.909 50.0742 343.334 51.2129 338.042 52.2905L337.905 51.6052L337.219 51.7427C329.007 53.3878 319.103 54.8895 307.807 56.209L307.111 56.2902L307.192 56.9851C302.732 57.5005 298.06 57.9876 293.193 58.4441L293.128 57.7474L292.431 57.8121C283.184 58.6706 273.243 59.4188 262.732 60.0413L262.033 60.0827L262.075 60.7812C257.497 61.0493 252.812 61.2935 248.031 61.5127L247.999 60.8136L247.3 60.8452C237.735 61.2779 227.786 61.6103 217.534 61.8323L216.834 61.8474L216.849 62.5471C212.221 62.6449 207.533 62.7202 202.79 62.7721L202.783 62.0723L202.083 62.0796C197.167 62.1309 192.193 62.1571 187.171 62.1571C182.149 62.1571 177.175 62.1309 172.259 62.0796L171.559 62.0723L171.552 62.7721C166.81 62.7202 162.121 62.6449 157.493 62.5471L157.508 61.8474L156.809 61.8323C146.557 61.6103 136.607 61.2779 127.042 60.8452L126.343 60.8136L126.311 61.5127C121.53 61.2935 116.845 61.0493 112.268 60.7812L112.309 60.0827L111.61 60.0413C101.099 59.4188 91.1579 58.6706 81.9112 57.8121L81.2142 57.7474L81.1496 58.4441C76.2828 57.9876 71.6101 57.5005 67.1498 56.9851L67.231 56.2902L66.5357 56.209C55.2392 54.8895 45.3353 53.3878 37.1235 51.7427L36.4371 51.6052L36.2999 52.2905C31.0082 51.2129 26.4332 50.0742 22.6579 48.8849L22.8732 48.2222L22.2074 48.0059C18.4301 46.7789 15.558 45.5143 13.6442 44.2365C11.6979 42.9371 10.9215 41.7478 10.9215 40.7143C10.9215 39.6808 11.6979 38.4915 13.6442 37.192C15.558 35.9143 18.4301 34.6497 22.2074 33.4227L22.8732 33.2064L22.6579 32.5436C26.4332 31.3544 31.0082 30.2157 36.2999 29.138L36.4371 29.8233L37.1235 29.6858C45.3353 28.0408 55.2392 26.5391 66.5357 25.2195L67.231 25.1383L67.1498 24.4435C71.6101 23.928 76.2827 23.4409 81.1495 22.9845L81.2142 23.6811L81.9112 23.6164C91.1579 22.758 101.099 22.0097 111.61 21.3872L112.309 21.3459L112.268 20.6473C116.845 20.3793 121.53 20.1351 126.311 19.9159L126.343 20.615L127.042 20.5833C136.607 20.1507 146.557 19.8183 156.809 19.5963L157.509 19.5812L157.493 18.8815C162.121 18.7837 166.81 18.7084 171.552 18.6565L171.559 19.3563L172.259 19.349C177.175 19.2976 182.149 19.2714 187.171 19.2714C192.193 19.2714 197.167 19.2976 202.083 19.349L202.783 19.3563L202.79 18.6565C207.533 18.7084 212.221 18.7837 216.849 18.8815L216.834 19.5812L217.534 19.5963C227.786 19.8183 237.735 20.1507 247.3 20.5833L247.999 20.615L248.031 19.9159C252.812 20.1351 257.497 20.3793 262.075 20.6473L262.033 21.3459L262.732 21.3872C273.243 22.0097 283.184 22.758 292.431 23.6164L293.128 23.6811L293.193 22.9845C298.06 23.4409 302.732 23.928 307.192 24.4435L307.111 25.1383L307.807 25.2195C319.103 26.5391 329.007 28.0408 337.219 29.6858L337.905 29.8233L338.042 29.138Z" fill="#0B0708" stroke="#0028EC" stroke-width="1.4" stroke-miterlimit="1.44008" stroke-linecap="square" stroke-dasharray="27 14"/>
+                            <ellipse class="moveUp2" cx="184" cy="32.1429" rx="162.362" ry="22.1429" fill="white"/>
+                            <ellipse class="moveUp1" cx="184" cy="22.1429" rx="147.141" ry="22.1429" fill="url(#paint0_linear_2_9)"/>
+                            <defs>
+                            <linearGradient id="paint0_linear_2_9" x1="184" y1="44" x2="184" y2="-4.84266e-07" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#0028EC"/>
+                            <stop offset="1" stop-color="#000F58"/>
+                            </linearGradient>
+                            </defs>
+                        </svg>
+                    </div>
+                    
+                                               
+                </div>
+            </div>
+        </section>
+        <section id="page2">
+            <div id="aboutImg">
+                <div id="design" data-tilt data-tilt-reverse="true">
+                    <img src="./assests/demo.jpg"  alt="">
+                    <div id="imgBorder"></div>
+                    <div class="imgGrid">
+                        <div class="hideIt"></div>
+                        <div></div>
+                        <div></div>
+                        <div class="hideIt"></div>
+                    </div>
+                    <div id="imgBlend">
+                        <img src="./assests/demo.jpg" alt="">
+                        <div class="imgGrid">
+                            <div></div>
+                            <div class="hideIt"></div>
+                            <div class="hideIt"></div>
+                            <div></div>
+                        </div> 
+                    </div>
+                </div>
+
+            </div>
+            <div id="aboutTxt">
+                Lorem ipsum dolor sit amet consectetur, <br>adipisicing elit. Quaerat, aliquam.
+            </div>
+        </section>
+        <section id="page3">
+            <div id="page3__content">
+                <div id="sliderCircle"></div>
+                <div id="slider">
+                    <div id="prevBnt">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left-square" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M15 2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2zM0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm11.5 5.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z"/>
+                        </svg>
+                    </div>
+                    <div id="nxtBnt">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-square" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M15 2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2zM0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm4.5 5.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
+                        </svg>
+                    </div>
+                    <div id="sliderBody">
+                        <div class="boundry" data-color="#bc0001,#7d0001,#3f0000">
+                            <div class="sliderCard">
+                                <div class="face bckFace">
+                                    1 
+                                </div>
+                                <div class="face fwdFace">
+                                    <!-- <p>1</p> -->
+                                    <img src="./assests/events/evt1.jpg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="boundry" data-color="#303030, #202020, #101010">
+                            <div class="sliderCard">
+                                <div class="face bckFace">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, repellendus?
+                                </div>
+                                <div class="face fwdFace">
+                                    <!-- <p>1</p> -->
+                                    <img src="./assests/events/evt2.jpg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="boundry" data-color="#183018, #102010, #081008">
+                            <div class="sliderCard">
+                                <div class="face bckFace">
+                                    3
+                                </div>
+                                <div class="face fwdFace">
+                                    <!-- <p>1</p> -->
+                                    <img src="./assests/events/evt3.jpg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="boundry">
+                            <div class="sliderCard">
+                                <div class="face bckFace">
+                                    3
+                                </div>
+                                <div class="face fwdFace">
+                                    <img src="./assests/events/demo1.jpg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="boundry">
+                            <div class="sliderCard">
+                                <div class="face bckFace">
+                                    3
+                                </div>
+                                <div class="face fwdFace">
+                                    <img src="./assests/events/demo2.jpg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="page4">
+            <!-- <div id="teamTxt">Lorem, ipsum.</div> -->
+            <div id="people">
+                <div class="card">
+                    <img class="bImg" src="./assests/person1.jpg" alt="">
+                    <div class="cardBody">
+                        <div class="cardCircle"></div>
+                        <div class="cardInfo">
+                            <p>Name</p>
+                            <div class="links">
+                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 382 382" style="enable-background:new 0 0 382 382;" xml:space="preserve">
+                                    <path style="fill:#0077B7;" d="M347.445,0H34.555C15.471,0,0,15.471,0,34.555v312.889C0,366.529,15.471,382,34.555,382h312.889  C366.529,382,382,366.529,382,347.444V34.555C382,15.471,366.529,0,347.445,0z M118.207,329.844c0,5.554-4.502,10.056-10.056,10.056  H65.345c-5.554,0-10.056-4.502-10.056-10.056V150.403c0-5.554,4.502-10.056,10.056-10.056h42.806  c5.554,0,10.056,4.502,10.056,10.056V329.844z M86.748,123.432c-22.459,0-40.666-18.207-40.666-40.666S64.289,42.1,86.748,42.1  s40.666,18.207,40.666,40.666S109.208,123.432,86.748,123.432z M341.91,330.654c0,5.106-4.14,9.246-9.246,9.246H286.73  c-5.106,0-9.246-4.14-9.246-9.246v-84.168c0-12.556,3.683-55.021-32.813-55.021c-28.309,0-34.051,29.066-35.204,42.11v97.079  c0,5.106-4.139,9.246-9.246,9.246h-44.426c-5.106,0-9.246-4.14-9.246-9.246V149.593c0-5.106,4.14-9.246,9.246-9.246h44.426  c5.106,0,9.246,4.14,9.246,9.246v15.655c10.497-15.753,26.097-27.912,59.312-27.912c73.552,0,73.131,68.716,73.131,106.472  L341.91,330.654L341.91,330.654z"/>
+                                </svg>
+                                <svg width="32px" height="32px" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M16 0.396c-8.839 0-16 7.167-16 16 0 7.073 4.584 13.068 10.937 15.183 0.803 0.151 1.093-0.344 1.093-0.772 0-0.38-0.009-1.385-0.015-2.719-4.453 0.964-5.391-2.151-5.391-2.151-0.729-1.844-1.781-2.339-1.781-2.339-1.448-0.989 0.115-0.968 0.115-0.968 1.604 0.109 2.448 1.645 2.448 1.645 1.427 2.448 3.744 1.74 4.661 1.328 0.14-1.031 0.557-1.74 1.011-2.135-3.552-0.401-7.287-1.776-7.287-7.907 0-1.751 0.62-3.177 1.645-4.297-0.177-0.401-0.719-2.031 0.141-4.235 0 0 1.339-0.427 4.4 1.641 1.281-0.355 2.641-0.532 4-0.541 1.36 0.009 2.719 0.187 4 0.541 3.043-2.068 4.381-1.641 4.381-1.641 0.859 2.204 0.317 3.833 0.161 4.235 1.015 1.12 1.635 2.547 1.635 4.297 0 6.145-3.74 7.5-7.296 7.891 0.556 0.479 1.077 1.464 1.077 2.959 0 2.14-0.020 3.864-0.020 4.385 0 0.416 0.28 0.916 1.104 0.755 6.4-2.093 10.979-8.093 10.979-15.156 0-8.833-7.161-16-16-16z"/>
+                                  </svg>
+                            </div>
+                        </div>
+                        <img class="fImg" src="./assests/person1.jpg" alt="">
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="bImg" src="./assests/person1.jpg" alt="">
+                    <div class="cardBody">
+                        <div class="cardCircle"></div>
+                        <div class="cardInfo">
+                            <p>Name</p>
+                            <div class="links">
+                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 382 382" style="enable-background:new 0 0 382 382;" xml:space="preserve">
+                                    <path style="fill:#0077B7;" d="M347.445,0H34.555C15.471,0,0,15.471,0,34.555v312.889C0,366.529,15.471,382,34.555,382h312.889  C366.529,382,382,366.529,382,347.444V34.555C382,15.471,366.529,0,347.445,0z M118.207,329.844c0,5.554-4.502,10.056-10.056,10.056  H65.345c-5.554,0-10.056-4.502-10.056-10.056V150.403c0-5.554,4.502-10.056,10.056-10.056h42.806  c5.554,0,10.056,4.502,10.056,10.056V329.844z M86.748,123.432c-22.459,0-40.666-18.207-40.666-40.666S64.289,42.1,86.748,42.1  s40.666,18.207,40.666,40.666S109.208,123.432,86.748,123.432z M341.91,330.654c0,5.106-4.14,9.246-9.246,9.246H286.73  c-5.106,0-9.246-4.14-9.246-9.246v-84.168c0-12.556,3.683-55.021-32.813-55.021c-28.309,0-34.051,29.066-35.204,42.11v97.079  c0,5.106-4.139,9.246-9.246,9.246h-44.426c-5.106,0-9.246-4.14-9.246-9.246V149.593c0-5.106,4.14-9.246,9.246-9.246h44.426  c5.106,0,9.246,4.14,9.246,9.246v15.655c10.497-15.753,26.097-27.912,59.312-27.912c73.552,0,73.131,68.716,73.131,106.472  L341.91,330.654L341.91,330.654z"/>
+                                </svg>
+                                <svg width="32px" height="32px" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M16 0.396c-8.839 0-16 7.167-16 16 0 7.073 4.584 13.068 10.937 15.183 0.803 0.151 1.093-0.344 1.093-0.772 0-0.38-0.009-1.385-0.015-2.719-4.453 0.964-5.391-2.151-5.391-2.151-0.729-1.844-1.781-2.339-1.781-2.339-1.448-0.989 0.115-0.968 0.115-0.968 1.604 0.109 2.448 1.645 2.448 1.645 1.427 2.448 3.744 1.74 4.661 1.328 0.14-1.031 0.557-1.74 1.011-2.135-3.552-0.401-7.287-1.776-7.287-7.907 0-1.751 0.62-3.177 1.645-4.297-0.177-0.401-0.719-2.031 0.141-4.235 0 0 1.339-0.427 4.4 1.641 1.281-0.355 2.641-0.532 4-0.541 1.36 0.009 2.719 0.187 4 0.541 3.043-2.068 4.381-1.641 4.381-1.641 0.859 2.204 0.317 3.833 0.161 4.235 1.015 1.12 1.635 2.547 1.635 4.297 0 6.145-3.74 7.5-7.296 7.891 0.556 0.479 1.077 1.464 1.077 2.959 0 2.14-0.020 3.864-0.020 4.385 0 0.416 0.28 0.916 1.104 0.755 6.4-2.093 10.979-8.093 10.979-15.156 0-8.833-7.161-16-16-16z"/>
+                                  </svg>
+                            </div>
+                        </div>
+                        <img class="fImg" src="./assests/person1.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+            <!-- <p id="knowMore">Know More</p> -->
+            <div class="button1" data-tilt data-tilt-reverse="true" data-tilt-max="25" id="knowMore">
+                <p >Know More</p>
+            </div>
+        </section>
+        <section id="page5">
+            <div id="contactUs">
+                <form action="#">
+                    <div class="formField">
+                        <input type="text" placeholder=" ">
+                        <label>Name</label>
+                    </div>
+                    <div class="formField">
+                        <input type="text" placeholder=" ">
+                        <label>Email</label>
+                    </div>
+                    <div class="formField">
+                        <input type="text" placeholder=" ">
+                        <label>Phone Number</label>
+                    </div>
+                    <div class="formField">
+                        <textarea rows="5" placeholder=" "> </textarea>
+                        <label>Message</label>
+                    </div>
+                    <button data-tilt data-tilt-reverse="true" data-tilt-max="20" type="submit" class="button1">
+                        <p>Submit</p>
+                    </button>
+                </form>
+            </div>
+            <div id="map">
+                <img src="./assests/map.png" alt="">
+            </div>
+        </section>
+    </section>
+</body>
+</html>
