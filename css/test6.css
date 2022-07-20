@@ -256,6 +256,17 @@ form .fgp:nth-of-type(4), form .fgp:nth-of-type(5) {
 }
 form .fgp:last-of-type {
   background-color: transparent;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+form .fgp:last-of-type label {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 form .fgp:last-of-type label:nth-of-type(2) {
   color: white;

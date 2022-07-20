@@ -246,6 +246,11 @@ form{
         }
         &:last-of-type{
             background-color: transparent;
+            flex-direction: column;
+            label{
+                align-self: flex-start;
+                width: fit-content;
+            }
             label:nth-of-type(2){
                 color: $mainTxt-color;
                 font-size: $mainTxt-size;
