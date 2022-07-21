@@ -11,7 +11,7 @@
     position: absolute;
     top: 0;left : 0;right : 0; bottom: 0;
     height: 10px;
-    width: 100px;
+    width: 10px;
     background-color: red;
     z-index: 100000;
     transition: 500ms;
@@ -39,10 +39,21 @@ html,body{
 
 .Lsvg{
     position: absolute;
-    top: 0;left: 0;right: 0;bottom: 0;
-    height: 100%;
-    width: 100%;
-    background-color: red;
+    left: 0;
+    z-index: -10;
+    // height: 100%;
+    width: 100vw;
+    // background-color: chocolate;
+    pointer-events: none;
+    // overflow: visible;
+    path{
+        stroke : white;
+        stroke-width : 2px;
+    }
+    circle{
+        fill : white;
+    }
+    
 }
 
 #bcGrad1{
@@ -143,6 +154,7 @@ body{
     top: 0;
     opacity: 0;
     padding-top: calc( 1rem + 10px );
+    // background-color: burlywood;
     // visibility: collapse;
     // opacity: $hidden;
     // display: flex;
@@ -230,8 +242,8 @@ body{
         // grid-template-columns: repeat(4,1fr);
     }
 
-    $card-width : 250px;
-    $card-height : 310px;
+    $card-width : 230px;
+    $card-height : 285px;
 
     #mis{
         // flex-direction: column;
@@ -421,7 +433,8 @@ footer{
     // background-color: #0091aa;
     // circle at 50% 100%, #00d9ff, #0091aa, #004855 var(--breath), #000000
 
-    background: linear-gradient(0deg, #0091aa, #006b7c, #004752, #00262c);
+    // background: linear-gradient(0deg, #0091aa, #006b7c, #004752, #00262c);
+    background-color: rgba($color: #000000, $alpha: 0.5);
     height: 50vh;
     // height: fit-content;
     width: 100vw;

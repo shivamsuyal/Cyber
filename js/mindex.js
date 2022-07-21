@@ -2,6 +2,7 @@ let Mobile = false
 gsap.registerPlugin(ScrollTrigger)
 
 // variables
+var header = document.querySelector("header")
 var navMarker = document.getElementById("navMarker")
 var navLinks = document.querySelectorAll("#navLinks a")
 var cyberImg = document.getElementById("cyberImg")
@@ -363,8 +364,33 @@ function updateAboutImg(){
 // abtImg.style.height = page2.offsetHeight+'px'
 // abtImg.style.width = page2.offsetWidth+'px'
 
+gsap.timeline({
+    scrollTrigger : {
+        trigger : "#page2",
+        // scroller  : "#pages",
+        start : "+=40% center",
+        end : "+=5%",
+        // endTrigger : "#page2",
+        // markers : true,
+        scrub : true,
+        toggleActions : "restart pause reverse pause",
+        // onEnterBack : updateAboutImg,
+    }
+})
+.from("#page2",{opacity : 0,duration : 10})
 
-const tl = gsap.timeline()
+gsap.timeline({
+    scrollTrigger : {
+        trigger : "#page2",
+        // scroller  : "#pages",
+        start : "center center",
+        // markers : true,
+        scrub : true,
+        pin : "#page2",
+        toggleActions : "restart pause reverse pause",
+        // onEnterBack : updateAboutImg,
+    }
+})
     .fromTo(
         abtImg,
         {width : page2.offsetWidth+'px',height : page2.offsetHeight+'px'},
@@ -375,17 +401,6 @@ const tl = gsap.timeline()
     .to('#move-2',{yPercent : -100,duration : 2})
 
 
-ScrollTrigger.create({
-    trigger : "#page2",
-    // scroller  : "#pages",
-    animation : tl,
-    start : "center center",
-    // markers : true,
-    scrub : true,
-    pin : "#page2",
-    toggleActions : "restart pause reverse pause",
-    // onEnterBack : updateAboutImg,
-})
 /** about */
 
 /** Carousel Functions */
@@ -472,19 +487,25 @@ ScrollTrigger.create({
 /** page4 team page */
 
 
-/* page 5 rbg color disco **
-const contactField = document.querySelectorAll(".formField input, .formField textarea")
+/* page 5  **/
+p5IO = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+        if(e.isIntersecting){
+            // console.log("enter")
+            header.style.backgroundColor = "#001220"
+        }else{
+            header.style.backgroundColor = "transparent"
+            // console.log("exit")
+        }
+    })
+},{
+    // rootMargin : `0px 0px -${}px 0px`
+    rootMargin : `0px 0px -${window.screen.height - header.offsetHeight}px 0px`
+})
 
-contactField.forEach(e => {
-    e.onfocus = ()=>{
-        e.parentNode.classList.add("activeField")
-    }
-    e.onblur = ()=>{
-        e.parentNode.classList.remove("activeField")
-    }
-});
+p5IO.observe(page5)
 
-/* page 5 rbg color disco **/
+/* page 5  **/
 
 
 
@@ -590,7 +611,7 @@ window.onload = ()=>{
             },
       }
     }).mount()
-    setTimeout(popUP1,1000,1)
+    // setTimeout(popUP1,1000,1)
 }
 
 

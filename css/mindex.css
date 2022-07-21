@@ -194,7 +194,10 @@ body {
 header {
   z-index: 100;
   position: fixed;
-  width: 95vw;
+  width: 100vw;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding-right: 5vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -212,6 +215,8 @@ header {
   font-weight: 400;
   font-size: 1.2rem;
   letter-spacing: 2px;
+  -webkit-transition: background-color 600ms;
+  transition: background-color 600ms;
 }
 header #navLinks {
   position: relative;
@@ -269,9 +274,8 @@ header #navLinks a::after {
   -webkit-transition: 700ms;
   transition: 700ms;
 }
-header span {
+header span a {
   cursor: pointer;
-  color: white;
   margin: 0 1rem;
   padding: 0.4rem 0.6rem;
   border: 1px solid #01FFFF;
@@ -279,10 +283,14 @@ header span {
   background-color: transparent;
   -webkit-transition: all 1000ms;
   transition: all 1000ms;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  color: white;
 }
-header span:hover {
-  background-color: #01FFFF;
+header span:hover a {
   color: black;
+  background-color: #01FFFF;
 }
 
 .button1 {
@@ -903,30 +911,38 @@ header span:hover {
 }
 
 #page5 {
+  position: relative;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   width: 100vw;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  min-height: 100vh;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  overflow-x: hidden;
+  background-color: white;
+  z-index: 10;
+  padding-bottom: 1rem;
+}
+#page5 #p5BG {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: -10;
+  background-color: #001220;
+  background-image: url("../assests/layered-waves-haikei (2).svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+#page5 #p5Txt {
+  width: 100%;
+  height: 50vh;
   color: white;
-  row-gap: 1rem;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-#page5 #contactUs {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-#page5 #contactUs form {
-  background-image: radial-gradient(circle at 0% 0%, #373b52, #252736 51%, #1d1e26);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -934,117 +950,233 @@ header span:hover {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  row-gap: 3rem;
-  border: 1px solid black;
-  border-radius: 1rem;
-  padding: 3rem 1rem 1rem 1rem;
-  min-width: 50%;
-  width: 60%;
-  min-height: -webkit-fit-content !important;
-  min-height: -moz-fit-content !important;
-  min-height: fit-content !important;
-  color: #eee;
+  font-family: "Open Sans", sans-serif;
 }
-#page5 #contactUs form .formField {
-  position: relative;
-  font-weight: 300;
-  width: 70%;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  border-bottom: 1px solid #ffffff;
+#page5 #p5Txt h1 {
+  margin: 0;
+  font-size: 5rem;
+  font-weight: 600;
+  text-align: center;
 }
-#page5 #contactUs form .formField label {
-  font-family: "Roboto Mono";
-  font-weight: 400;
-  position: absolute;
-  left: 0;
-  top: 0;
-  -webkit-transition: all 700ms;
-  transition: all 700ms;
+#page5 #p5Txt p {
+  margin: 0 0 0 2.5rem;
   font-size: 1rem;
-  opacity: 0.7;
-  pointer-events: none;
-}
-#page5 #contactUs form .formField input, #page5 #contactUs form .formField textarea {
-  font-family: "Comfortaa";
-  font-size: 1.1rem;
-  border: none;
-  width: 100%;
-  background-color: transparent;
-  color: #eee;
-}
-#page5 #contactUs form .formField input:focus, #page5 #contactUs form .formField textarea:focus {
-  outline: none;
-}
-#page5 #contactUs form .formField input:focus + label, #page5 #contactUs form .formField input:not(:placeholder-shown) + label, #page5 #contactUs form .formField input:-webkit-autofill + label, #page5 #contactUs form .formField textarea:focus + label, #page5 #contactUs form .formField textarea:not(:placeholder-shown) + label, #page5 #contactUs form .formField textarea:-webkit-autofill + label {
-  -webkit-transform: scale(0.8) translate(-0.5rem, -1.8rem);
-          transform: scale(0.8) translate(-0.5rem, -1.8rem);
-}
-#page5 #contactUs form .formField textarea {
-  resize: none;
-}
-#page5 #contactUs form button {
-  border: none;
-  font-size: 1.2rem;
-  font-family: "Quicksand";
   font-weight: 400;
-  letter-spacing: 2px;
-  padding: 0.7rem 1rem;
-  color: #eee;
-  background-color: transparent;
-  border-radius: 0.5rem;
-  border: 1px solid white;
-  cursor: pointer;
-  -webkit-transition: 800ms;
-  transition: 800ms;
 }
-#page5 #contactUs form button:hover {
-  font-weight: 500;
-  background-color: #3FFF00;
-  -webkit-box-shadow: 0 0 10px black;
-          box-shadow: 0 0 10px black;
-  color: black;
-  border-color: transparent !important;
+#page5 #ContactUS {
+  height: 100vh;
+  width: 80vw;
+  margin: 0 auto;
+  margin-top: 10rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-shadow: -10px 10px 40px 0px black;
+          box-shadow: -10px 10px 40px 0px black;
+  border-radius: 1rem;
+  overflow: hidden;
 }
-#page5 #contactUs #divider {
-  width: 2px;
-  height: 90%;
+#page5 #ContactUS #cForm {
   background-color: white;
-}
-#page5 #map {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  padding: 2rem 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  row-gap: 2rem;
+}
+#page5 #ContactUS #cForm #cfHead {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+#page5 #ContactUS #cForm #cfHead p {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  margin: 0;
+  font-size: 1.5rem;
   font-family: "Comfortaa";
+  font-weight: 500;
+}
+#page5 #ContactUS #cForm #cfHead svg {
+  height: 1.5rem;
+  width: auto;
+  fill: grey;
+}
+#page5 #ContactUS #cForm #cfContent {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: grid;
+  grid-template-columns: repeat(2, 45%);
+  gap: 1rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+#page5 #ContactUS #cForm #cfContent input, #page5 #ContactUS #cForm #cfContent textarea {
+  -ms-flex-item-align: center;
+      align-self: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: none;
+  border-bottom: 1px solid grey;
   width: 100%;
-  max-height: 100%;
+  font-family: "Roboto Mono", monospace;
+}
+#page5 #ContactUS #cForm #cfContent input:focus, #page5 #ContactUS #cForm #cfContent textarea:focus {
+  outline: none;
+}
+#page5 #ContactUS #cForm #cfContent textarea {
+  grid-column: 1/-1;
+}
+#page5 #ContactUS #cForm button {
+  border: 2px solid #0016CC;
+  background-color: transparent;
+  color: black;
+  padding: 0.7rem 2rem;
+  border-radius: 0.5rem;
+  margin: 0 auto;
+  font-weight: 500;
+  font-family: "Quicksand";
+  -webkit-transition: 700ms;
+  transition: 700ms;
+  cursor: pointer;
+}
+#page5 #ContactUS #cForm button:hover {
+  background-color: #0016CC;
+  color: white;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+#page5 #ContactUS #info {
+  width: 30%;
+  padding: 0 0 0 0.5rem;
+  background-color: #272E41;
+  color: #dfdfdd;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 2rem;
+}
+#page5 #ContactUS #info p {
+  font-size: 1.5rem;
+  font-family: "Comfortaa";
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+#page5 #ContactUS #info .info1 {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  margin-bottom: 1rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 1rem;
+}
+#page5 #ContactUS #info .info1 .i1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 0.7rem 1rem;
+  opacity: 0.6;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 1rem;
+  cursor: pointer;
+  -webkit-transition: 500ms;
+  transition: 500ms;
 }
-#page5 #map img {
-  border-radius: 1rem;
-  -o-object-fit: cover;
-     object-fit: cover;
-  width: 100%;
-  height: 60%;
-  opacity: 0.8;
-  -webkit-transition: 1000ms;
-  transition: 1000ms;
-}
-#page5 #map img:hover {
+#page5 #ContactUS #info .info1 .i1:hover {
   opacity: 1;
+}
+#page5 #ContactUS #info .info1 .i1 svg {
+  height: 1.3rem;
+  width: auto;
+  overflow: visible;
+}
+#page5 #ContactUS #info .info1 .i1 tt {
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+  font-size: "Inconsolata";
+}
+#page5 #ContactUS #info .info2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 1rem;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+#page5 #ContactUS #info .info2 svg {
+  height: 2rem;
+  width: auto;
+  overflow: visible;
+  cursor: pointer;
+  -webkit-transition: 500ms;
+  transition: 500ms;
+  opacity: 0.5;
+  fill: #dfdfdd;
+}
+#page5 #ContactUS #info .info2 svg:hover {
+  opacity: 1;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+#page5 #ContactUS #info .info3 {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-bottom: 1rem;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+#page5 #ContactUS #info .info3 img {
+  height: auto;
+  width: 95%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  margin: 0 0 0 0.25rem;
+  border-radius: 0.6rem;
 }
