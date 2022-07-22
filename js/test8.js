@@ -122,7 +122,7 @@ const navTime = gsap.timeline({
     // }
 })
 .from(canvas,{opacity : 0,duration : 1})
-.to(navFill,{r : c,i : 1 ,duration : 3,},"<").pause()
+.to(navFill,{r : c,i : 1 ,duration : 2},"<").pause()
 
 
 
