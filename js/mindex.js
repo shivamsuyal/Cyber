@@ -578,9 +578,10 @@ function MobileJS(x) {
                 },transition)
             }
         }        
-    } else {
-      document.body.style.backgroundColor = "pink";
-    }
+    } 
+    // else {
+    // //   document.body.style.backgroundColor = "pink";
+    // }
   }
   
 const x = window.matchMedia("(max-width: 500px)")
