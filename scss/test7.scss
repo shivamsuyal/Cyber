@@ -1,0 +1,235 @@
+html,body{
+    margin: 0;
+    padding: 0;
+    /* Hide scrollbar */
+    &::-webkit-scrollbar {
+        display: none;
+    }
+    &{
+        -ms-overflow-style: none;  
+        scrollbar-width: none; 
+    } 
+    /* Hide scrollbar */
+    // padding-bottom: 100vh;
+
+}
+
+body{
+    background-color: #1D1D1D;
+    width: 100vw;
+    height: 100vh;
+}
+
+
+$mainTxt-color : #FEFEFE;
+$svg-fill : #1D90F5;
+$label-color : grey;
+$mainTxt-size : 0.9rem;
+$group-color : #262626;
+
+#container{
+    width: 100%;
+    // box-sizing: border-box;
+    height: fit-content;
+    margin-bottom: 1rem;
+    overflow-x: hidden;
+
+    // background-color: cadetblue;
+    #txt{
+        margin: 1.5rem 0 0 1rem;
+        color: $mainTxt-color;
+        display: flex;
+        flex-wrap: wrap;
+        // justify-content: center;
+        align-items: flex-end;
+        width: 100%;
+        // column-gap: 0.3rem;
+        row-gap: 0.5rem;
+        span{
+            flex-shrink: 0;
+            width: 100%;
+            // background-color: antiquewhite;
+            // text-align: center;
+            color: $label-color;
+            padding-left: 1rem;
+            font-size: 0.7rem;
+            font-family: 'Inconsolata';
+            letter-spacing: 1px;
+        }
+        p{
+            font-family: 'Comfortaa';
+            margin: 0;
+            font-size: 2rem;
+            height: fit-content;
+        }
+        svg{
+            height: 1rem;
+            width: auto;
+            fill : $svg-fill;
+            transform: rotate(13deg);
+            path {
+                fill: $svg-fill;
+            }
+        }
+    }
+
+    form{
+        margin: 0 auto;
+        margin-top: 2.5rem;
+        // background-color: bisque;
+        display: flex;
+        // flex-direction: column;
+        justify-content: space-between;
+        
+        flex-wrap: wrap;
+        row-gap: 1rem;
+        width: 95%;
+        
+    
+        .fgp{
+            display: flex;
+            // flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: $group-color ;
+            border-radius: 0.7rem;
+            padding: 0.7rem 0.4rem;
+            column-gap:0.4rem ;
+            width: 100%;
+            // height: fit-content;
+            // margin: auto 0;
+            label{
+                font-size: 0.6rem;
+                color: $label-color;
+                font-family: 'Roboto Mono';
+                display: flex;
+                // justify-content: center;
+                align-items: center;
+                column-gap: 0.5rem;
+            }
+            input,select{
+                background-color: transparent;
+                font-family: 'Open Sans';
+                width: 100%;
+                letter-spacing: 1px;
+                border: none;
+                color: $mainTxt-color;
+                font-size: $mainTxt-size;
+                &:focus{
+                    outline: none;
+                }
+            }
+            select{
+                background-color: $group-color;
+                font-family: 'Open Sans' !important;
+                option{
+                    font-family: 'Open Sans' !important;
+                    letter-spacing: 0.5px;
+                }
+            }
+            &:nth-of-type(4){
+                flex-direction: column;
+                // justify-content: flex-start;
+                align-items: flex-start;
+                label{
+                    column-gap: 1rem;
+                }
+                input{
+                    text-align: center;
+                }
+            }
+            &:nth-of-type(4),&:nth-of-type(5){
+                width: 45%;
+            }
+            &:nth-of-type(12){
+                background-color: transparent;
+                justify-content: space-between;
+                margin: 0 auto;
+                width: 90%;
+                // flex-direction: column;
+                label{
+                    // align-self: flex-start;
+                    width: fit-content;
+                }
+                label:nth-of-type(2){
+                    color: $mainTxt-color;
+                    font-size: $mainTxt-size;
+                }
+                #register{
+                    height: 2.5rem;
+                    width: auto;
+                    opacity: 1;
+                    transition: 300ms;
+                }
+            }
+    
+            svg{
+                $svg-color : white;
+                fill : $svg-color;
+                overflow: visible;
+                height: 1rem;
+                width: auto;
+                opacity: 0.6;
+                path{
+                    overflow: visible;
+                    fill: $svg-color;
+                }
+            }
+    
+        }
+        // #register{
+        //     display: flex;
+        //     // justify-content: center;
+        //     justify-content: space-between;
+        //     align-items: center;
+        //     margin: 0 auto;
+        //     width: 95%;
+        //     label{
+        //         // $button-color :#1C8FF3;
+        //         // background-color: cadetblue;
+        //         padding: 0.8rem 1.5rem;
+        //         font-size: 1rem;
+        //         color: $mainTxt-color;
+        //         // border: 1px solid $button-color;
+        //         border-radius: 0.8rem;
+        //         // background-color: transparent;
+        //         cursor: pointer;
+        //         transition: 700ms;
+        //         font-family: 'Comfortaa';
+        //         font-weight: 400;
+        //     }
+        //     svg{
+        //         height: 2.5rem;
+        //         width: auto;
+        //     }
+        // }
+        
+    }
+    #links{
+        // margin: 3rem 0;
+        margin-top: 3rem;
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        svg{
+            height: 2rem;
+            width: auto;
+        }
+    }
+    #back{
+        width: 100%;
+        text-align: center;
+        a{
+            margin: 1rem 0;
+            text-decoration: none;
+            color: $label-color;
+            opacity: 0.7;
+            width: 100%;
+            text-align: center;            
+        }
+    }
+
+}
+
+
+
