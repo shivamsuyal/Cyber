@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <!-- FONT -->
-    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500&family=Inconsolata:wght@400&family=Jost:wght@300;400;500&family=Quicksand:wght@500&family=Roboto+Mono:wght@300;400&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 
     <!-- CSS -->
     <link rel="stylesheet" href="./css/test7.css">
@@ -16,9 +16,23 @@
     <script src="./js/gsap-scroll.js" defer></script>
     <script src="./js/gsap-motionPath.js" defer></script>
     <script src="./js/gsap.js" defer></script> -->
-    <script src="./js/test7.js" defer></script>
+    <script src="./js/jquery.js" defer></script>
+    <script src="./js/register.js" defer></script>
 </head>
 <body>
+    <div id="errorDiv">
+        <div id="error">
+            <div id="ehead">
+                <p>Error</p>
+                <svg onclick="errorDiv.style.zIndex = '-200';errorDiv.style.opacity = '0';error.style.transform = 'translateY(-50%)';error.style.opacity = '1';" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+                    <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
+                </svg>
+            </div>
+            <div id="ebody">
+                <p id="errorTxt"></p>
+            </div>
+        </div>
+    </div>
     <div id="container">
         <div id="txt">
             <p>Let's Register</p>
@@ -84,10 +98,10 @@
                 </label> -->
                 <select name="year">
                     <option value="" disabled="" selected="">Year Of Study</option>
-                    <option value="">1 Year</option>
-                    <option value="">2 Year</option>
-                    <option value="">3 Year</option>
-                    <option value="">4 Year</option>
+                        <option value="1">1 Year</option>
+                        <option value="2">2 Year</option>
+                        <option value="3">3 Year</option>
+                        <option value="4">4 Year</option>
                 </select>
             </div>
             <div class="fgp">
@@ -97,11 +111,11 @@
                 <!-- <label for="gender">
                     Gender
                 </label> -->
-                <select name="year">
-                    <option value="" selected disabled>...</option>
-                    <option value="">Male</option>
-                    <option value="">Female</option>
-                    <option value="">Others</option>
+                <select name="gender">
+                    <option value="" disabled selected>...</option>
+                        <option value="M">Male</option>
+                        <option value="F">Female</option>
+                        <option value="O">Others</option>
                 </select>
             </div>
             <div class="fgp">
@@ -112,13 +126,13 @@
                     Course Enrolled
                 </label> -->
                 <select name="course" onchange="setSep(this.selectedOptions[0].innerText )">
-                    <option value="" disabled="" selected="">Select your branch</option>
-                    <option value="">SCHOOL OF DESIGN</option>
-                    <option value="">SCHOOL OF HEALTH SCIENCES</option>
-                    <option value="">SCHOOL OF LAW</option>
-                    <option value="">SCHOOL OF COMPUTER SCIENCE</option>
-                    <option value="">SCHOOL OF ENGINEERING</option>
-                    <option value="">SCHOOL OF BUSINESS</option>
+                    <option value="" disabled selected="">Select your branch</option>
+                        <option value="DESIGN">SCHOOL OF DESIGN</option>
+                        <option value="HEALTH SCIENCES">SCHOOL OF HEALTH SCIENCES</option>
+                        <option value="LAW">SCHOOL OF LAW</option>
+                        <option value="COMPUTER SCIENCE">SCHOOL OF COMPUTER SCIENCE</option>
+                        <option value="ENGINEERING">SCHOOL OF ENGINEERING</option>
+                        <option value="BUSINESS">SCHOOL OF BUSINESS</option>
                 </select>
             </div>
             <div class="fgp">
@@ -157,10 +171,10 @@
                 <!-- <label for="memType">
                     Membership Type
                 </label> -->
-                <select name="memType" onchange="total.innerHTML = this.value">
+                <select name="memType" onchange="total.innerText = 'Rs '+this.value.split('-')[1] ">
                     <option value="" disabled selected>Membership</option>
-                    <option value="Rs 100">Basic - 1 Year Membership</option>
-                    <option value="Rs 200">Extended - 2 year Membership</option>
+                    <option value="Basic-100">Basic - 1 Year Membership</option>
+                    <option value="Extended-200">Extended - 2 year Membership</option>
                 </select>
             </div>
             <div class="fgp">
@@ -173,7 +187,7 @@
                     </label>
                     <label for="" id="total">Rs 0.00</label>
                 </div>
-                <svg id="register" width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg onclick="Formvalidate()" id="register" width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <circle cx="50" cy="50" r="50" fill="url(#paint0_radial_46_21)"/>
                     <path d="M56.7606 39.2903L67.6387 49.7417L67.6997 49.7959C67.8856 49.9746 67.9857 50.2044 68 50.4382V50.5618C67.9857 50.7956 67.8856 51.0254 67.6997 51.2041L67.6462 51.248L56.7606 61.7097C56.3579 62.0968 55.7048 62.0968 55.3021 61.7097C54.8993 61.3227 54.8993 60.6951 55.3021 60.3081L65.4514 50.5618L55.3021 40.6919C54.8993 40.3049 54.8993 39.6773 55.3021 39.2903C55.7048 38.9032 56.3579 38.9032 56.7606 39.2903Z" fill="#FEFEFE"/>
                     <rect x="29" y="49" width="30" height="3" rx="1.5" fill="#FEFEFE"/>

@@ -12,6 +12,93 @@ html, body {
   scrollbar-width: none;
 }
 
+#errorDiv {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: -20;
+  opacity: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-transition: 700ms;
+  transition: 700ms;
+}
+#errorDiv #error {
+  background-color: #eee;
+  margin: 0 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border-radius: 0 0 0.6rem 0.6rem;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  opacity: 0;
+  -webkit-transition: 700ms;
+  transition: 700ms;
+}
+#errorDiv #error #ehead {
+  background-color: red;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0.3rem;
+  -webkit-transition: 600ms;
+  transition: 600ms;
+}
+#errorDiv #error #ehead:hover {
+  -webkit-box-shadow: 0px 1px 10px 0px black;
+          box-shadow: 0px 1px 10px 0px black;
+}
+#errorDiv #error #ehead p {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  margin: 0;
+  text-align: center;
+  font-family: "Open Sans";
+  font-size: 1.3rem;
+}
+#errorDiv #error #ehead svg {
+  height: 1rem;
+  width: auto;
+  cursor: pointer;
+  stroke: black;
+  stroke-width: 1px;
+}
+#errorDiv #error #ebody {
+  padding: 1rem;
+  font-family: "Roboto Mono";
+}
+#errorDiv #error #ebody p {
+  text-align: center;
+}
+#errorDiv #error #ebody p span {
+  color: red;
+  display: inline-block;
+}
+
 body {
   background-color: #1D1D1D;
   width: 100vw;

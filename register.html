@@ -6,7 +6,7 @@
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
     <title>Document</title>
     <!-- FONT -->
-    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500&family=Inconsolata:wght@400&family=Jost:wght@300;400;500&family=Quicksand:wght@500&family=Roboto+Mono:wght@300;400&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500&family=Inconsolata:wght@400&family=Jost:wght@300;400;500&family=Quicksand:wght@500&family=Roboto+Mono:wght@300;400;500&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 
 
     <!-- CSS -->
@@ -17,9 +17,23 @@
     <!-- <script src="./js/gsap-scroll.js" defer></script>
     <script src="./js/gsap-motionPath.js" defer></script>
     <script src="./js/gsap.js" defer></script> -->
+    <script src="./js/jquery.js" defer></script>
     <script src="./js/register.js" defer></script>
 </head>
 <body>
+    <div id="errorDiv">
+        <div id="error">
+            <div id="ehead">
+                <p>Error</p>
+                <svg onclick="errorDiv.style.zIndex = '-200';errorDiv.style.opacity = '0';error.style.transform = 'translateY(-50%)';error.style.opacity = '1';" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+                    <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
+                </svg>
+            </div>
+            <div id="ebody">
+                <p id="errorTxt"></p>
+            </div>
+        </div>
+    </div>
     <div id="container">
         <header class="desktop-header">
             <div id="navLinks">
@@ -105,10 +119,10 @@
                     </label> -->
                     <select name="year">
                         <option value="" disabled="" selected="">Year Of Study</option>
-                        <option value="">1 Year</option>
-                        <option value="">2 Year</option>
-                        <option value="">3 Year</option>
-                        <option value="">4 Year</option>
+                        <option value="1">1 Year</option>
+                        <option value="2">2 Year</option>
+                        <option value="3">3 Year</option>
+                        <option value="4">4 Year</option>
                     </select>
                 </div>
                 <div class="fgp">
@@ -118,11 +132,11 @@
                     <!-- <label for="gender">
                         Gender
                     </label> -->
-                    <select name="year">
-                        <option value="" selected disabled>...</option>
-                        <option value="">Male</option>
-                        <option value="">Female</option>
-                        <option value="">Others</option>
+                    <select name="gender">
+                        <option value="" disabled selected>...</option>
+                        <option value="M">Male</option>
+                        <option value="F">Female</option>
+                        <option value="O">Others</option>
                     </select>
                 </div>
                 <div class="fgp">
@@ -133,13 +147,13 @@
                         Course Enrolled
                     </label> -->
                     <select name="course" onchange="setSep(this.selectedOptions[0].innerText )">
-                        <option value="" disabled="" selected="">Select your branch</option>
-                        <option value="">SCHOOL OF DESIGN</option>
-                        <option value="">SCHOOL OF HEALTH SCIENCES</option>
-                        <option value="">SCHOOL OF LAW</option>
-                        <option value="">SCHOOL OF COMPUTER SCIENCE</option>
-                        <option value="">SCHOOL OF ENGINEERING</option>
-                        <option value="">SCHOOL OF BUSINESS</option>
+                        <option value="" disabled selected="">Select your branch</option>
+                        <option value="DESIGN">SCHOOL OF DESIGN</option>
+                        <option value="HEALTH SCIENCES">SCHOOL OF HEALTH SCIENCES</option>
+                        <option value="LAW">SCHOOL OF LAW</option>
+                        <option value="COMPUTER SCIENCE">SCHOOL OF COMPUTER SCIENCE</option>
+                        <option value="ENGINEERING">SCHOOL OF ENGINEERING</option>
+                        <option value="BUSINESS">SCHOOL OF BUSINESS</option>
                     </select>
                 </div>
                 <div class="fgp">
@@ -178,10 +192,10 @@
                     <!-- <label for="memType">
                         Membership Type
                     </label> -->
-                    <select name="memType" onchange="total.innerHTML = this.value">
+                    <select name="memType" onchange="total.innerText = 'Rs '+this.value.split('-')[1] ">
                         <option value="" disabled selected>Membership</option>
-                        <option value="Rs 100">Basic - 1 Year Membership</option>
-                        <option value="Rs 200">Extended - 2 year Membership</option>
+                        <option value="Basic-100">Basic - 1 Year Membership</option>
+                        <option value="Extended-200">Extended - 2 year Membership</option>
                     </select>
                 </div>
                 <div class="fgp">
@@ -193,9 +207,28 @@
                     </label>
                     <label for="" id="total">Rs 0.00</label>
                 </div>
-                <button>Register</button>
+                <button onclick="Formvalidate()" type="button">Register</button>
            </form> 
         </div>
     </div>
+    <script>
+        navLinks = document.querySelectorAll("#navLinks a")
+        navLinks.forEach(e=>{
+            e.onmouseover = ()=>{
+                navMarker.style.left = e.offsetLeft-2.5+'px'
+                navMarker.style.width = e.offsetWidth+2+'px'
+                navLinks.forEach(link=>{
+                    if(e==link){
+                        link.classList.add("activeLink")
+                        link.classList.remove("nonActiveLink")
+                    }else{
+                        link.classList.remove("activeLink")
+                        link.classList.add("nonActiveLink")
+                    }
+                })
+            }
+        })
+        navLinks[0].onmouseover()
+    </script>
 </body>
 </html>

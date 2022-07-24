@@ -122,7 +122,36 @@ const navTime = gsap.timeline({
     // }
 })
 .from(canvas,{opacity : 0,duration : 1})
-.to(navFill,{r : c,i : 1 ,duration : 2, ease:Circ.easeIn},"<").pause()
+.to(navFill,{r : c,i : 1 ,duration : 2, ease:Circ.easeIn},"<")
+.to("#mhLinks a span",{height : "100%",duration : 1,ease : Power4,delay : 0.2,stagger : 0.1}).pause()
 
 
+// gsap.timeline()
+//     .fromTo("#Csvg1 path",{
+//         strokeDasharray : (i,t)=>{
+//             return t.getTotalLength()
+//         },
+//         strokeDashoffset : (i,t)=>{
+//             return t.getTotalLength()
+//         }
+//     },{
+//         duration : 4,
+//         strokeDashoffset : 0,
+//         ease : Power3.easeInOut
+//     })
+//     .to("#page1Txt p",{opacity : 1,duration : 2,stagger : 0.6},"<2")
+//     .fromTo("#scrollD path",{
+//         strokeDasharray : (i,t)=>{
+//             return t.getTotalLength()
+//         },
+//         strokeDashoffset : (i,t)=>{
+//             return t.getTotalLength()
+//         }
+//     },{
+//         // delay : 0.3,
+//         duration : 2,
+//         strokeDashoffset : 0,
+//         ease : Power2.easeInOut
+//     })
+//     .from("#scrollD path",{fill : "transparent",duration : 0.5})
 

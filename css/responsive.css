@@ -1,28 +1,3 @@
-@media only screen and (max-width: 940px) {
-  #ContactUS {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    width: 97vw !important;
-    height: -webkit-fit-content !important;
-    height: -moz-fit-content !important;
-    height: fit-content !important;
-  }
-  #ContactUS #info {
-    width: 100% !important;
-  }
-  #ContactUS #info .info3 img {
-    width: 90% !important;
-  }
-}
-@media only screen and (max-width: 487px) {
-  #p5Txt p {
-    margin: 0 !important;
-    text-align: center;
-    width: 100vw;
-  }
-}
 @media only screen and (max-width: 649px) {
   .desktop-header {
     font-size: 1rem;
@@ -32,30 +7,6 @@
 @media only screen and (max-width: 562px) {
   .desktop-header {
     font-size: 0.8rem;
-  }
-}
-@media only screen and (max-width: 600px) {
-  #page5 {
-    grid-template-columns: 100%;
-  }
-  #page5 #contactUs {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
-  #page5 #contactUs form {
-    width: 100%;
-    -webkit-transform: scale(0.8);
-            transform: scale(0.8);
-  }
-  #page5 #contactUs #divider {
-    width: 90%;
-    height: 2px;
-    background-color: white;
-  }
-  #page5 #map img {
-    height: 100%;
   }
 }
 @media only screen and (max-width: 500px) {

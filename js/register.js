@@ -1,20 +1,5 @@
-navLinks = document.querySelectorAll("#navLinks a")
-navLinks.forEach(e=>{
-    e.onmouseover = ()=>{
-        navMarker.style.left = e.offsetLeft-2.5+'px'
-        navMarker.style.width = e.offsetWidth+2+'px'
-        navLinks.forEach(link=>{
-            if(e==link){
-                link.classList.add("activeLink")
-                link.classList.remove("nonActiveLink")
-            }else{
-                link.classList.remove("activeLink")
-                link.classList.add("nonActiveLink")
-            }
-        })
-    }
-})
-navLinks[0].onmouseover()
+const RESTAPI = "http://192.168.29.130:4444/api/addUser/"
+// const RESTAPI = "http://localhost:4444/api/addUser/"
 
 function setSep(c){
     // var c = course.selectedOptions[0].innerText 
@@ -128,9 +113,109 @@ function setSep(c){
         spec.innerHTML = '<option value="" disabled selected>Specialisations</option>'
     }
 }
-
 setSep()
 
+const mForm = document.querySelector('form')
+function Formvalidate(){
+    var data = Object.fromEntries(new FormData(mForm).entries())
+
+    // // Checking for empty data
+    // for(key in data){
+    //     if(data[key] == ""){
+    //         return alert(key)
+    //     }
+    // }
+
+    // fname
+    var re = RegExp("^[a-zA-Z]+$")
+    if(!re.test(data['fname'])){
+        return disError('First Name')
+    }
+
+    // lname
+    if(!re.test(data['lname'])){
+        return disError('Last Name')
+    }
+
+    // sapID
+    re = RegExp("^[0-9]+$")
+    if(!re.test(data['sapid'])){
+        return disError('Sap Id')
+    }
+
+    // phone NUM
+    // re = RegExp("^[0-9]{10}$")
+    // if(!re.test(data['pNO'])){
+    //     return disError('Phone Number')
+    // }
+
+    // // whatsapp NUM
+    // if(!re.test(data['wNO'])){
+    //     return disError('Whatsapp Number')
+    // }
+
+    re = RegExp("^\\d{4}-\\d{2}-\\d{2}$")
+    if(!re.test(data['dob'])){
+        return disError('DOB')
+    }
+
+    // Year
+    if(!(0 < data['year'] && data['year'] < 5 )){
+        return disError('Year')
+    }
+
+    // GENDER
+    if(!(data['gender'] == 'M' || data['gender'] == 'F' || data['gender'] == 'O')){
+        return disError('Gender')
+    }
+
+    // Course
+    c = ['DESIGN','HEALTH SCIENCES','LAW','COMPUTER SCIENCE','ENGINEERING','BUSINESS']
+    if(!( c.includes(data['course']))){
+        return disError('Course')
+    }
+
+    // Specialisation
+    if(data['specialisation'] == undefined || data['specialisation'] == ""){
+        return disError('Specialisation')
+    }
+
+    // Membership 
+    var mem = ['Basic-100','Extended-200'] 
+    if(!(mem.includes(data['memType']))){
+        return disError('Membership')
+    }
+
+    try {
+        $.ajax({
+            url : RESTAPI,
+            method : 'POST',
+            type : 'POST',
+            data : data,
+            headers: {
+                'Access-Control-Allow-Origin' : "*"
+            },
+            success : (data)=>{
+                console.log(data)
+            },
+            error : (error)=>{
+                console.log("error :: ",error)
+            }
+        })
+    } catch (error) {
+        console.log(error)
+    }
+
+}
+
+
+function disError(e){
+    errorTxt.innerHTML = `There is some error in <span>${e}</span> Field`
+    errorDiv.style.zIndex = "200"
+    errorDiv.style.opacity = "1"
+    error.style.transform = "translateY(0%)"
+    error.style.opacity = "1"
+}
 
 
 window.onload = ()=>{
