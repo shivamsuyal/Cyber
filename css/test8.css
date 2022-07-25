@@ -21,24 +21,10 @@ body {
   width: 100vw;
 }
 
-nav {
+#mhSVG {
   position: fixed;
   top: 0;
-  left: 0;
   right: 0;
-  bottom: 0;
-  z-index: 100;
-}
-nav #navCanvas {
-  position: absolute;
-  top: 0;
-  right: 0;
-  pointer-events: none;
-  z-index: -10;
-  height: 100vh;
-  width: 100vw;
-}
-nav #mhSVG {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -55,15 +41,15 @@ nav #mhSVG {
   transition: all 1000ms;
   z-index: 100;
 }
-nav #mhSVG[data-open=false] {
+#mhSVG[data-open=false] {
   opacity: 0.4;
 }
-nav #mhSVG svg {
+#mhSVG svg {
   height: 3rem;
   width: auto;
   fill: white;
 }
-nav #mhSVG .ham {
+#mhSVG .ham {
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
   -webkit-transition: -webkit-transform 700ms;
@@ -75,17 +61,17 @@ nav #mhSVG .ham {
   -ms-user-select: none;
   user-select: none;
 }
-nav #mhSVG .hamRotate.active {
+#mhSVG .hamRotate.active {
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
 }
-nav #mhSVG .hamRotate.active .top {
+#mhSVG .hamRotate.active .top {
   stroke-dashoffset: -98px;
 }
-nav #mhSVG .hamRotate.active .bottom {
+#mhSVG .hamRotate.active .bottom {
   stroke-dashoffset: -138px;
 }
-nav #mhSVG .line {
+#mhSVG .line {
   fill: none;
   -webkit-transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
   transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
@@ -93,11 +79,29 @@ nav #mhSVG .line {
   stroke-width: 5.5;
   stroke-linecap: round;
 }
-nav #mhSVG .ham1 .top {
+#mhSVG .ham1 .top {
   stroke-dasharray: 40 139;
 }
-nav #mhSVG .ham1 .bottom {
+#mhSVG .ham1 .bottom {
   stroke-dasharray: 40 180;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: black;
+  -webkit-clip-path: circle(0% at 50%);
+          clip-path: circle(0% at 50%);
+  -webkit-transition: -webkit-clip-path 1s;
+  transition: -webkit-clip-path 1s;
+  transition: clip-path 1s;
+  transition: clip-path 1s, -webkit-clip-path 1s;
+  z-index: 50;
 }
 nav #mhLinks {
   position: absolute;
@@ -143,6 +147,31 @@ nav #mhLinks a span {
   min-height: 200vh;
 }
 
+.title {
+  color: white;
+  width: 100%;
+  text-align: center;
+}
+
+.pContent {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
 #page1 {
   width: 100%;
   height: 100vh;
@@ -182,15 +211,33 @@ nav #mhLinks a span {
 #page1 #page1Txt p span {
   color: red;
 }
+#page1 #svgContainer {
+  position: relative;
+}
+#page1 #svgContainer img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+}
 #page1 #shieldSVG1 {
   position: absolute;
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  opacity: 0;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   height: 16.6rem;
   width: auto;
-  opacity: 0.5;
+}
+#page1 #shieldSVG1 image {
+  opacity: 0;
 }
 #page1 #Csvg1 {
   height: 20rem;
@@ -230,6 +277,9 @@ nav #mhLinks a span {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  opacity: 0;
+}
+#page2 .pContent {
   gap: 2rem;
 }
 #page2 #page2Txt {
@@ -240,4 +290,464 @@ nav #mhLinks a span {
 #page2 #shieldDiv {
   min-height: 20rem;
   min-width: 100vw;
+}
+
+#page3 {
+  height: 100vh;
+  width: 100vw;
+}
+#page3 .pContent {
+  height: 100%;
+  width: 100vw;
+}
+#page3 .pContent .splide {
+  width: 100vw;
+}
+#page3 .pContent .splide .splide__pagination {
+  bottom: -5px;
+}
+#page3 .pContent .splide .splide__track .splide__list .splide__slide {
+  width: 90vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  overflow: hidden;
+}
+#page3 .pContent .splide .splide__track .splide__list .splide__slide .boundry {
+  position: relative;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 1rem 0;
+}
+#page3 .pContent .splide .splide__track .splide__list .splide__slide .boundry:hover .face.fwdFace {
+  -webkit-transform: perspective(1000px) rotateY(180deg);
+          transform: perspective(1000px) rotateY(180deg);
+}
+#page3 .pContent .splide .splide__track .splide__list .splide__slide .boundry:hover .face.bckFace {
+  -webkit-transform: translate(-50%, -50%) perspective(1000px) rotateY(360deg);
+          transform: translate(-50%, -50%) perspective(1000px) rotateY(360deg);
+}
+#page3 .pContent .splide .splide__track .splide__list .splide__slide .boundry .face {
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transition: 2s ease-in-out;
+  transition: 2s ease-in-out;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  -webkit-transform: perspective(1000px) rotateY(0deg);
+          transform: perspective(1000px) rotateY(0deg);
+  border-radius: 1rem;
+}
+#page3 .pContent .splide .splide__track .splide__list .splide__slide .boundry .face p {
+  margin: 0;
+}
+#page3 .pContent .splide .splide__track .splide__list .splide__slide .boundry .face.fwdFace {
+  overflow: hidden;
+}
+#page3 .pContent .splide .splide__track .splide__list .splide__slide .boundry .face.fwdFace img {
+  height: 50vh;
+  width: auto;
+}
+#page3 .pContent .splide .splide__track .splide__list .splide__slide .boundry .face.bckFace {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  bottom: 0px;
+  right: 0px;
+  -webkit-transform: translate(-50%, -50%) perspective(1000px) rotateY(180deg);
+          transform: translate(-50%, -50%) perspective(1000px) rotateY(180deg);
+  background-color: yellowgreen;
+  width: 100%;
+  height: 100%;
+}
+
+#page4 {
+  min-height: 100vh;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 2rem;
+}
+#page4 .title1 {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  color: white;
+  position: relative;
+  z-index: 40;
+}
+#page4 .title1 #gyan {
+  width: 90%;
+  position: relative;
+}
+#page4 .title1 #gyan #hashTags {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1rem;
+  -webkit-column-gap: 0.3rem;
+     -moz-column-gap: 0.3rem;
+          column-gap: 0.3rem;
+}
+#page4 .title1 #gyan #hashTags span {
+  -webkit-animation: blink 500ms linear infinite;
+          animation: blink 500ms linear infinite;
+}
+#page4 .title1 #gyan p {
+  opacity: 0;
+  margin: 0;
+  text-align: center;
+}
+#page4 .title1 h1 {
+  font-size: 2rem;
+  text-align: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0 0.5rem;
+  margin: 0;
+}
+#page4 .hid1 {
+  opacity: 0;
+}
+#page4 #knowMore {
+  -webkit-box-flex: 0;
+      -ms-flex: none;
+          flex: none;
+  font-size: 1rem;
+}
+#page4 #people {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 2rem 20vw;
+  width: 100%;
+}
+#page4 #people .card {
+  position: relative;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 250px;
+  height: 350px;
+  margin: 0;
+  border-radius: 1rem;
+  overflow: hidden;
+  -webkit-box-shadow: inset 0 0 15px 1px #000000;
+          box-shadow: inset 0 0 15px 1px #000000;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+#page4 #people .card:hover .fImg {
+  border-radius: 3rem;
+  -webkit-box-shadow: 0 0 20px black;
+          box-shadow: 0 0 20px black;
+  -webkit-transform: scale(0.4) translateY(-5rem);
+          transform: scale(0.4) translateY(-5rem);
+}
+#page4 #people .card:hover .cardBody .cardInfo p {
+  -webkit-animation: tracking-in-expand 1200ms 700ms cubic-bezier(0.215, 0.61, 0.355, 1) both !important;
+          animation: tracking-in-expand 1200ms 700ms cubic-bezier(0.215, 0.61, 0.355, 1) both !important;
+}
+#page4 #people .card .bImg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  -webkit-filter: grayscale(100%) blur(1.5px);
+          filter: grayscale(100%) blur(1.5px);
+  pointer-events: none;
+}
+#page4 #people .card .cardBody {
+  height: 60%;
+  width: 100%;
+  display: grid;
+  grid-template-rows: 33% 66%;
+}
+#page4 #people .card .cardBody .cardCircle {
+  -webkit-transform: translateY(50%);
+          transform: translateY(50%);
+  background-color: #fcfbf4;
+  -webkit-clip-path: ellipse(50% 49% at 50% 50%);
+          clip-path: ellipse(50% 49% at 50% 50%);
+}
+#page4 #people .card .cardBody .cardInfo {
+  background-color: #fcfbf4;
+  z-index: 10;
+  position: relative;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+#page4 #people .card .cardBody .cardInfo p {
+  margin: 0;
+  padding: 0;
+  font-family: "Comfortaa";
+  margin-top: 1rem;
+  font-size: 1.5rem;
+  text-align: center;
+  opacity: 0;
+  -webkit-animation: tracking-out-contract 0.7s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+          animation: tracking-out-contract 0.7s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+  -webkit-transition: all 1000ms;
+  transition: all 1000ms;
+}
+#page4 #people .card .cardBody .cardInfo .links {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+#page4 #people .card .cardBody .cardInfo .links svg {
+  margin: 0;
+  height: 2.5rem;
+  width: auto;
+  padding-bottom: 0.4rem;
+  border-bottom: 3px solid black;
+  cursor: pointer;
+}
+#page4 #people .card .cardBody .cardInfo .links svg:hover {
+  -webkit-animation: jello-horizontal 0.9s both;
+          animation: jello-horizontal 0.9s both;
+}
+#page4 #people .card .cardBody .fImg {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 20;
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -o-object-position: center;
+     object-position: center;
+  -webkit-transition: all 1000ms;
+  transition: all 1000ms;
+  pointer-events: none;
+}
+
+footer {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding-bottom: 1rem;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: 100vw;
+}
+footer #foot1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 2rem 0;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  border-bottom: 1px solid white;
+}
+footer #foot1 #logo {
+  padding-left: 0.5rem;
+}
+footer #foot1 #logo img {
+  height: 10vh;
+  width: auto;
+}
+footer #foot1 #links {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+footer #foot1 #links a {
+  font-size: 1rem;
+  text-align: center;
+  color: white;
+  text-decoration: none;
+  opacity: 0.7;
+  -webkit-transition: opacity 300ms, -webkit-transform 700ms;
+  transition: opacity 300ms, -webkit-transform 700ms;
+  transition: opacity 300ms, transform 700ms;
+  transition: opacity 300ms, transform 700ms, -webkit-transform 700ms;
+}
+footer #foot1 #links a:hover {
+  opacity: 1;
+  -webkit-transform: scale(1.08);
+          transform: scale(1.08);
+  -webkit-filter: brightness(1.1);
+          filter: brightness(1.1);
+}
+footer #foot2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  gap: 1rem;
+  color: #FEFEFE;
+}
+footer #foot2 #footSVG {
+  margin-top: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 2rem;
+}
+footer #foot2 #footSVG svg {
+  height: 2rem;
+  width: auto;
+  overflow: visible;
+  cursor: pointer;
+  -webkit-transition: 500ms;
+  transition: 500ms;
+  fill: white;
+}
+footer #foot2 #footSVG svg path {
+  fill: white;
+}
+footer #foot2 #footTxt p {
+  margin: 0;
+}
+
+.button1 {
+  color: white;
+  font-family: "Inconsolata";
+  padding: 1rem;
+  border: 1px solid white;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  -webkit-transition: 700ms;
+  transition: 700ms;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transform: perspective(1000px);
+          transform: perspective(1000px);
+}
+.button1:hover {
+  background-color: #3FFF00 !important;
+  border-color: transparent !important;
+  -webkit-box-shadow: 0 0 10px black;
+          box-shadow: 0 0 10px black;
+}
+.button1:hover p {
+  color: black;
+  -webkit-transform: translateZ(40px);
+          transform: translateZ(40px);
+}
+.button1 p {
+  margin: 0;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-transform: translateZ(0px);
+          transform: translateZ(0px);
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  -webkit-font-smoothing: subpixel-antialiased;
+  will-change: transform;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-transition: 700ms;
+  transition: 700ms;
 }
