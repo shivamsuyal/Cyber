@@ -81,13 +81,9 @@ navLinks[0].onmouseover()
 
 
 /** Cyber Sentinal anim */
-setTimeout(()=>{
-    light.style.opacity = "1"
-},4500)
-setTimeout(()=>{
-    // document.getElementById("cyberImg").style.animation = "CyberImg 1500ms ease-in-out forwards" 
-    document.getElementById("cyberImg").style.opacity = "1" 
-    setTimeout(()=>{
+
+gsap.timeline({
+    onComplete : ()=>{
         VanillaTilt.init(cyberImg, {
             reverse : true,
             max: 30,
@@ -95,8 +91,11 @@ setTimeout(()=>{
             scale:1.1,
             startX : -20
         });
-    },1000)
-},5500)
+    }
+})
+    .to(light,{opacity : 1,delay : 2.5,duration : 1})
+    .to(cyberImg,{opacity : 1,delay : 0.5,duration : 1,ease : Power2.easeIn})
+
 /** Cyber Sentinal anim */
 
 /** Random letter function */
@@ -219,6 +218,30 @@ stringRandom.init("#homeTxt h1")
 
 
 
+/** PAGE 1 */
+gsap.timeline({
+    scrollTrigger : {
+        trigger : "#page1",
+        endTrigger: "#page1",
+        end : "bottom center",
+        // scroller  : "#pages",
+        start : "center center",
+        markers : true,
+        scrub : true,
+        // pin : "#page4",
+        toggleActions : "restart pause reverse pause",
+        // onEnterBack : updateAboutImg,
+    }
+})
+    // .to(light,{opacity : 0 , duration : 1})
+    .to(homeImg,{x : "100%",delay : 4,duration : 5})
+    .to(".l1",{xPercent : -100,duration : 5,stagger : 1},"<")
+/** PAGE 1 */
+
+
+
+
+
 /** intersetion oberserver */
 // background gradient observer
 pageIOBJ = new IntersectionObserver(entries=>{
@@ -242,8 +265,8 @@ pageIOBJ = new IntersectionObserver(entries=>{
         } catch (TypeError) {}
     })
 },{
-    // threshold : 0.8
-    rootMargin : "-50% 0px -30% 0px"
+    threshold : 0.5,
+    // rootMargin : "-50% 0px -30% 0px"
 })
 
 pageIOBJ.observe(page1)
@@ -253,68 +276,68 @@ pageIOBJ.observe(page4)
 // pageIOBJ.observe(page5)
 
 
-// page objs observer
-elesIOBJ_L = new IntersectionObserver(entries=>{
-    entries.forEach(e=>{
-        // console.log(e.isIntersecting)
-        try {
-            if(e.isIntersecting){
-                if(getComputedStyle(e.target).opacity == "0"){
-                    if(e.target.dataset.animated){
-                        e.target.style.animation = "slide-in-elliptic-left-fwd 1.3s ease-in both"
-                        setTimeout(()=>{
-                            e.target.style.animation = ""
-                        },1500)
-                    }else{
-                        e.target.dataset.animated = "true"
-                    }
-                }
-                // console.log("come back")
-            }else{
-                if(getComputedStyle(e.target).opacity == "1"){
-                    e.target.style.animation = "slide-out-elliptic-left-bck 1s ease-in both"
-                }
-            }
-        } catch (TypeError) {}
-    })
-},{
-    // threshold : 0.8
-    root:pages,
-    rootMargin : "-35% 0px 0px 0px"
-})
-elesIOBJ_R = new IntersectionObserver(entries=>{
-    entries.forEach(e=>{
-        // console.log(e.isIntersecting)
-        try {
-            if(e.isIntersecting){
-                if(getComputedStyle(e.target).opacity == "0"){
-                    if(e.target.dataset.animated){
-                        e.target.style.animation = "slide-in-right 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) forwards"
-                        setTimeout(()=>{
-                            e.target.style.animation = ""
-                        },1000)
-                    }else{
-                        e.target.dataset.animated = "true"
-                    }
-                }
-                // console.log("come back")
-            }else{
-                if(getComputedStyle(e.target).opacity == "1"){
-                    e.target.style.animation = "slide-out-right 0.7s cubic-bezier(0.550, 0.085, 0.680, 0.530) both"
-                }
-            }
-        } catch (TypeError) {}
-    })
-},{
-    // threshold : 0.8
-    root:pages,
-    rootMargin : "-50% 0px 0px 0px"
-})
+// // page objs observer
+// elesIOBJ_L = new IntersectionObserver(entries=>{
+//     entries.forEach(e=>{
+//         // console.log(e.isIntersecting)
+//         try {
+//             if(e.isIntersecting){
+//                 if(getComputedStyle(e.target).opacity == "0"){
+//                     if(e.target.dataset.animated){
+//                         e.target.style.animation = "slide-in-elliptic-left-fwd 1.3s ease-in both"
+//                         setTimeout(()=>{
+//                             e.target.style.animation = ""
+//                         },1500)
+//                     }else{
+//                         e.target.dataset.animated = "true"
+//                     }
+//                 }
+//                 // console.log("come back")
+//             }else{
+//                 if(getComputedStyle(e.target).opacity == "1"){
+//                     e.target.style.animation = "slide-out-elliptic-left-bck 1s ease-in both"
+//                 }
+//             }
+//         } catch (TypeError) {}
+//     })
+// },{
+//     // threshold : 0.8
+//     root:pages,
+//     rootMargin : "-35% 0px 0px 0px"
+// })
+// elesIOBJ_R = new IntersectionObserver(entries=>{
+//     entries.forEach(e=>{
+//         // console.log(e.isIntersecting)
+//         try {
+//             if(e.isIntersecting){
+//                 if(getComputedStyle(e.target).opacity == "0"){
+//                     if(e.target.dataset.animated){
+//                         e.target.style.animation = "slide-in-right 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) forwards"
+//                         setTimeout(()=>{
+//                             e.target.style.animation = ""
+//                         },1000)
+//                     }else{
+//                         e.target.dataset.animated = "true"
+//                     }
+//                 }
+//                 // console.log("come back")
+//             }else{
+//                 if(getComputedStyle(e.target).opacity == "1"){
+//                     e.target.style.animation = "slide-out-right 0.7s cubic-bezier(0.550, 0.085, 0.680, 0.530) both"
+//                 }
+//             }
+//         } catch (TypeError) {}
+//     })
+// },{
+//     // threshold : 0.8
+//     root:pages,
+//     rootMargin : "-50% 0px 0px 0px"
+// })
 
-elesIOBJ_L.observe(document.getElementById("homeTxtHead"))
-elesIOBJ_L.observe(document.querySelector("#homeTxt p"))
-elesIOBJ_R.observe(cyberImg)
-elesIOBJ_R.observe(document.getElementById("pedestal"))
+// elesIOBJ_L.observe(document.getElementById("homeTxtHead"))
+// elesIOBJ_L.observe(document.querySelector("#homeTxt p"))
+// elesIOBJ_R.observe(cyberImg)
+// elesIOBJ_R.observe(document.getElementById("pedestal"))
 
 
 // about image observer

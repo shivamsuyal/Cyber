@@ -407,8 +407,8 @@
             transform: scale3d(0.95, 1.05, 1);
   }
   100% {
-    -webkit-transform: scale(1.3);
-            transform: scale(1.3);
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
   }
 }
 @keyframes jello-horizontal {
@@ -433,8 +433,8 @@
             transform: scale3d(0.95, 1.05, 1);
   }
   100% {
-    -webkit-transform: scale(1.3);
-            transform: scale(1.3);
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
   }
 }
 @-webkit-keyframes tracking-in-expand {
