@@ -164,10 +164,18 @@ nav{
             }
         }
     }
-    #Csvg1{
+    #shieldSVG1{
+        position: absolute;
+        top: 0;left :  0;right: 0;bottom : 0;
+        height: 16.6rem;
+        width: auto;
+        opacity: 0.5;
         // background-color: aqua;
+    }
+    #Csvg1{
         height: 20rem;
         width: auto;
+        overflow: visible;
     }
     .cls-1{
         fill:none;
@@ -186,6 +194,34 @@ nav{
             stroke-width: 0.5px;
             overflow: visible;
         }
+    }
+    
+}
+
+#page2{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+    #page2Txt{
+        margin: 0;
+        color: $text-color-1;
+        text-align: center;
+    }
+    #shieldDiv{
+        // width: fit-content;
+        min-height: 20rem;
+        min-width: 100vw;
+        // background-color: cadetblue;
+        // border: 1px solid blue;
+        // svg{
+        //     height: 20rem;
+        //     width: auto;
+        //     opacity: 0;
+        // }
     }
 }
 

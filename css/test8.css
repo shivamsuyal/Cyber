@@ -182,9 +182,20 @@ nav #mhLinks a span {
 #page1 #page1Txt p span {
   color: red;
 }
+#page1 #shieldSVG1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 16.6rem;
+  width: auto;
+  opacity: 0.5;
+}
 #page1 #Csvg1 {
   height: 20rem;
   width: auto;
+  overflow: visible;
 }
 #page1 .cls-1 {
   fill: none;
@@ -201,4 +212,32 @@ nav #mhLinks a span {
   stroke: white;
   stroke-width: 0.5px;
   overflow: visible;
+}
+
+#page2 {
+  height: 100vh;
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 2rem;
+}
+#page2 #page2Txt {
+  margin: 0;
+  color: #FEFEFE;
+  text-align: center;
+}
+#page2 #shieldDiv {
+  min-height: 20rem;
+  min-width: 100vw;
 }

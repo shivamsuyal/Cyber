@@ -155,3 +155,19 @@ const navTime = gsap.timeline({
 //     })
 //     .from("#scrollD path",{fill : "transparent",duration : 0.5})
 
+// gsap.timeline({
+//     scrollTrigger : {
+//         trigger : "#shieldSVG1",
+//         start : "center center",
+//         markers : true,
+//         // scroller : "#people",
+//         scrub : true,
+//         // pin : true,
+//         // pinType : 'transform',
+//         toggleActions : "restart pause reverse pause",
+//     }
+//     })
+//     .to("#shieldSVG1",{
+//         y : shieldDiv.offsetTop +  svgContainer.offsetHeight*2,
+//         duration : 1
+//     })
