@@ -109,7 +109,8 @@ mhSVG.onclick = ()=>{
 
 // gsap.ticker.add(drawShape)
 const navTime = gsap.timeline()
-.to("nav",{clipPath : "circle(50% at 50%)",duration : 0.5,ease : Power0.easeNone})
+.fromTo("nav",{zIndex : -50,opacity : 0 },{zIndex : 50, opacity : 1,duration : 0.5})
+.to("#mhLinks",{clipPath : "circle(50% at 50%)",duration : 0.5,ease : Power0.easeNone})
 .to("#mhLinks a span",{height : "100%",duration : 1,ease : Power4.easeNone,delay : 0.2,stagger : 0.1}).pause()
 
 

@@ -226,7 +226,7 @@ gsap.timeline({
         end : "bottom center",
         // scroller  : "#pages",
         start : "center center",
-        markers : true,
+        // markers : true,
         scrub : true,
         // pin : "#page4",
         toggleActions : "restart pause reverse pause",
@@ -266,7 +266,6 @@ pageIOBJ = new IntersectionObserver(entries=>{
     })
 },{
     threshold : 0.5,
-    // rootMargin : "-50% 0px -30% 0px"
 })
 
 pageIOBJ.observe(page1)
