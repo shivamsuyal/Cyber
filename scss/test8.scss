@@ -42,7 +42,7 @@ body{
 
 #mhSVG{
     position: fixed;
-    top : 0 ;right: 0;
+    top : 0.5 ;right: 0;
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -153,6 +153,8 @@ nav{
     width: 100vw;
     max-width: 100vw;
     min-height: 200vh;
+    overflow-x: hidden;
+
     // pointer-events: none;
     // background-color: aquamarine;
     // background-color: cadetblue;
@@ -201,42 +203,28 @@ nav{
             }
         }
     }
-    #svgContainer{
-        position: relative;
-        img{
-            position: absolute;
-            top: 0;left :  0;right: 0;bottom : 0;
-            height: 100%;
-            width: 100%;
-            opacity: 0;
-        }
-    }
-    #shieldSVG1{
-        position: absolute;
-        transform-origin: center;
-        opacity: 0;
-        // z-index: 500;
-        top: 0;left :  0;right: 0;bottom : 0;
-        height: 16.6rem;
-        width: auto;
-        image{
-            opacity: 0;
-        }
-        // opacity: 0.5;
-        // background-color: aqua;
-    }
     #Csvg1{
+        // background-color: cadetblue;
         height: 20rem;
         width: auto;
         overflow: visible;
+        #shieldSVG1{
+            opacity: 0;
+            image{
+                opacity: 0;
+            }
+        }
+        #sen{
+            opacity: 0;
+        }
+        #all{
+            opacity: 1;
+            path{
+                fill: none;
+                stroke: #eee;
+            }
+        }
     }
-    .cls-1{
-        fill:none;
-        stroke:white;
-        stroke-miterlimit:10;
-        stroke-width:2px;
-    }
-
     #scrollD{
         overflow: visible;
         margin-top: 2rem;

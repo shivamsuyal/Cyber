@@ -119,7 +119,7 @@ const navTime = gsap.timeline()
 
 
 gsap.timeline()
-    .fromTo("#Csvg1 path",{
+    .fromTo("#all path",{
         strokeDasharray : (i,t)=>{
             return t.getTotalLength()
         },
@@ -132,23 +132,23 @@ gsap.timeline()
         ease : Power3.easeInOut
     })
     .to("#page1Txt p",{opacity : 1,duration : 2,stagger : 0.6},"<2")
-    .to("#Csvg1 g:nth-of-type(2)",{opacity : 0,duration : 1})
-    .to("#svgContainer img",{opacity : 1,duration : 1},"<")
-    .fromTo("#scrollD path",{
-        strokeDasharray : (i,t)=>{
-            return t.getTotalLength()
-        },
-        strokeDashoffset : (i,t)=>{
-            return t.getTotalLength()
-        }
-    },{
-        // delay : 0.3,
-        duration : 2,
-        strokeDashoffset : 0,
-        ease : Power2.easeInOut
-    })
-    .from("#scrollD path",{fill : "transparent",duration : 0.5})
-    .to("#scrollD",{y : 10,duration : 0.7,yoyoEase : Power4.easeNone,yoyo : true,repeat : -1})
+    .to("#all",{opacity : 0,duration : 1})
+    .to("#shieldSVG1,#sen",{opacity : 1,duration : 1},"<")
+    // .fromTo("#scrollD path",{
+    //     strokeDasharray : (i,t)=>{
+    //         return t.getTotalLength()
+    //     },
+    //     strokeDashoffset : (i,t)=>{
+    //         return t.getTotalLength()
+    //     }
+    // },{
+    //     // delay : 0.3,
+    //     duration : 2,
+    //     strokeDashoffset : 0,
+    //     ease : Power2.easeInOut
+    // })
+    // .from("#scrollD path",{fill : "transparent",duration : 0.5})
+    // .to("#scrollD",{y : 10,duration : 0.7,yoyoEase : Power4.easeNone,yoyo : true,repeat : -1})
     
 
 gsap.timeline({
@@ -156,7 +156,7 @@ gsap.timeline({
         trigger : "#shieldSVG1",
         endTrigger : "#page2",
         end : "center center",
-        start : "center top",
+        start : "center center",
         // markers : true,
         // scroller : "#people",
         scrub : true,
@@ -166,7 +166,6 @@ gsap.timeline({
         toggleActions : "restart pause reverse pause",
     }
     })
-    .to("#shieldSVG1",{opacity : 1,duration : 1})
     .to("#shieldSVG1",{
         y : shieldDiv.offsetTop + svgContainer.offsetHeight*2 + 120,
         duration : 10,

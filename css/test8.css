@@ -34,7 +34,7 @@ body {
 
 #mhSVG {
   position: fixed;
-  top: 0;
+  top: 0.5;
   right: 0;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -158,6 +158,7 @@ nav #mhLinks a span {
   width: 100vw;
   max-width: 100vw;
   min-height: 200vh;
+  overflow-x: hidden;
 }
 
 .title {
@@ -226,44 +227,26 @@ nav #mhLinks a span {
 #page1 #page1Txt p span {
   color: red;
 }
-#page1 #svgContainer {
-  position: relative;
-}
-#page1 #svgContainer img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 100%;
-  width: 100%;
-  opacity: 0;
-}
-#page1 #shieldSVG1 {
-  position: absolute;
-  -webkit-transform-origin: center;
-          transform-origin: center;
-  opacity: 0;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 16.6rem;
-  width: auto;
-}
-#page1 #shieldSVG1 image {
-  opacity: 0;
-}
 #page1 #Csvg1 {
   height: 20rem;
   width: auto;
   overflow: visible;
 }
-#page1 .cls-1 {
+#page1 #Csvg1 #shieldSVG1 {
+  opacity: 0;
+}
+#page1 #Csvg1 #shieldSVG1 image {
+  opacity: 0;
+}
+#page1 #Csvg1 #sen {
+  opacity: 0;
+}
+#page1 #Csvg1 #all {
+  opacity: 1;
+}
+#page1 #Csvg1 #all path {
   fill: none;
-  stroke: white;
-  stroke-miterlimit: 10;
-  stroke-width: 2px;
+  stroke: #eee;
 }
 #page1 #scrollD {
   overflow: visible;

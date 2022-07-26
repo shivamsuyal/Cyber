@@ -1,25 +1,13 @@
-
-/** window Loaded */
-window.onload = ()=>{
-    // updateAboutImg()
-    // abt.style.height = abtImg.offsetHeight + 'px'
-    // abt.style.width = abtImg.offsetWidth + 'px'
-    new Splide('.splide',{
-        perPage : 3,
-        breakpoints: {
-            661 : {
-                perPage : 2,
-            },
-            574: {
-                perPage: 1,
-            },
-      }
-    }).mount()
-    // setTimeout(popUP1,1000,1)
-}
-
-
-/** window Loaded */
-
-
-
+gsap.fromTo("#all path",{
+    strokeDasharray : (i,t)=>{
+        return t.getTotalLength()
+    },
+    strokeDashoffset : (i,t)=>{
+        return t.getTotalLength()
+    }
+},{
+    // delay : 0.3,
+    duration : 2,
+    strokeDashoffset : 0,
+    ease : Power2.easeInOut
+})
