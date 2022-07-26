@@ -1,6 +1,10 @@
 document.body.scrollTop = 0
 document.documentElement.scrollTop = 0;
 
+particlesJS.load('particles-js', './jsons/particle.json', function() {
+    console.log('callback - particles.js config loaded');
+});
+
 // gsap.registerPlugin(MotionPathPlugin)
 gsap.registerPlugin(ScrollTrigger)
 gsap.config({trialWarn: false})
