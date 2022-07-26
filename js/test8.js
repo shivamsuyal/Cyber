@@ -150,12 +150,15 @@ gsap.timeline()
 gsap.timeline({
     scrollTrigger : {
         trigger : "#shieldSVG1",
-        start : "center center",
+        endTrigger : "#page2",
+        end : "center center",
+        start : "center top",
         // markers : true,
         // scroller : "#people",
         scrub : true,
         // pin : true,
-        // pinType : 'transform',
+        // pinSpacing: false,
+        // pinType : 'fixed',
         toggleActions : "restart pause reverse pause",
     }
     })

@@ -233,8 +233,8 @@ gsap.timeline({
         // onEnterBack : updateAboutImg,
     }
 })
-    // .to(light,{opacity : 0 , duration : 1})
-    .to(homeImg,{x : "100%",delay : 4,duration : 5})
+    .to(lightC,{opacity : 0 , duration : 3})
+    .to(".r1",{xPercent : 120,delay : 4,duration : 5,stagger : 1})
     .to(".l1",{xPercent : -100,duration : 5,stagger : 1},"<")
 /** PAGE 1 */
 
