@@ -101,7 +101,7 @@ html,body{
 }
 
 $highlight-color-1 : #01FFFF;
-$highlight-color-2 : #3FFF00;
+// $highlight-color-2 : #3FFF00;
 $nav-height : 3.5rem;
 
 header{
@@ -271,6 +271,9 @@ form{
             align-items: center;
             column-gap: 0.5rem;
         }
+        input[type=date]{
+            text-transform: uppercase;
+        }
         input,select{
             background-color: transparent;
             font-family: 'Open Sans';
@@ -286,10 +289,6 @@ form{
         select{
             background-color: $group-color;
             font-family: 'Open Sans' !important;
-            option{
-                font-family: 'Open Sans' !important;
-                letter-spacing: 0.5px;
-            }
         }
         &:nth-of-type(4){
             flex-direction: column;

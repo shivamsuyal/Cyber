@@ -170,7 +170,7 @@ gsap.timeline({
     }
 })
 .from("#heads",{opacity : 0, duration : 10})
-// .to("#t",{opacity : 0, duration : 10},"<")
+.to("#t",{opacity : 0, duration : 10},"<")
 
 gsap.timeline({
     scrollTrigger : {
@@ -185,7 +185,7 @@ gsap.timeline({
     }
 })
 .from("#mis",{opacity : 0, duration : 10})
-// .to("#heads",{opacity : 0, duration : 10},"<")
+.to("#heads",{opacity : 0, duration : 10},"<")
 
 
 
@@ -216,7 +216,7 @@ function connectSVG(e1,e2,c,sp=0){
     y1 = e1.offsetTop + e1.offsetHeight
 
     if(sp == 1){
-        y2 = e2.offsetParent.offsetTop + e2.offsetParent.offsetParent.offsetParent.offsetTop + e2.offsetTop
+        y2 = e2.offsetParent.offsetTop + e2.offsetTop
     }else{
         y2 = e2.offsetTop
     }
@@ -318,8 +318,8 @@ window.onload = ()=>{
             },
             scale : 2,
         })
-        .to("#bgGrid .bgGrid__item",{opacity : 0,duration : 20},"<")
-        .to("#mainTxt p",{y: 5,fontSize : "2rem",padding : "1rem 2rem",duration : 20},"<20")
+        .to("#bgGrid .bgGrid__item",{opacity : 0,zIndex : -350,duration : 20},"<")
+        .to("#mainTxt p",{y: 5,fontSize : "2rem",zIndex : -350,padding : "1rem 2rem",duration : 20},"<20")
         .to("#people",{opacity : 1,zIndex : 350,duration : 20})
         // duration : 40, opacity :0,stagger : 1})   
         

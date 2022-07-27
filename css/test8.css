@@ -7,6 +7,7 @@ html, body {
   padding: 0;
   /* Hide scrollbar */
   /* Hide scrollbar */
+  scroll-behavior: smooth;
 }
 html::-webkit-scrollbar, body::-webkit-scrollbar {
   display: none;
@@ -32,10 +33,29 @@ body {
   z-index: -10000;
 }
 
-#mhSVG {
+#tops {
   position: fixed;
-  top: 0.5;
-  right: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100vw;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0 0.5rem;
+  z-index: 500;
+}
+#tops #tlogo {
+  top: 0.5rem;
+  left: 0.5rem;
+  height: 4rem;
+  width: auto;
+  opacity: 0;
+  cursor: pointer;
+}
+#tops #mhSVG {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -50,17 +70,18 @@ body {
   opacity: 1;
   -webkit-transition: all 1000ms;
   transition: all 1000ms;
-  z-index: 100;
+  z-index: 500;
+  cursor: pointer;
 }
-#mhSVG[data-open=false] {
+#tops #mhSVG[data-open=false] {
   opacity: 0.4;
 }
-#mhSVG svg {
+#tops #mhSVG svg {
   height: 3rem;
   width: auto;
   fill: white;
 }
-#mhSVG .ham {
+#tops #mhSVG .ham {
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
   -webkit-transition: -webkit-transform 700ms;
@@ -72,17 +93,17 @@ body {
   -ms-user-select: none;
   user-select: none;
 }
-#mhSVG .hamRotate.active {
+#tops #mhSVG .hamRotate.active {
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
 }
-#mhSVG .hamRotate.active .top {
+#tops #mhSVG .hamRotate.active .top {
   stroke-dashoffset: -98px;
 }
-#mhSVG .hamRotate.active .bottom {
+#tops #mhSVG .hamRotate.active .bottom {
   stroke-dashoffset: -138px;
 }
-#mhSVG .line {
+#tops #mhSVG .line {
   fill: none;
   -webkit-transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
   transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
@@ -90,10 +111,10 @@ body {
   stroke-width: 5.5;
   stroke-linecap: round;
 }
-#mhSVG .ham1 .top {
+#tops #mhSVG .ham1 .top {
   stroke-dasharray: 40 139;
 }
-#mhSVG .ham1 .bottom {
+#tops #mhSVG .ham1 .bottom {
   stroke-dasharray: 40 180;
 }
 
@@ -114,7 +135,7 @@ nav {
 }
 nav #mhLinks {
   position: absolute;
-  background-color: #000000;
+  background-color: #3F53A4;
   -webkit-clip-path: circle(0% at 50%);
           clip-path: circle(0% at 50%);
   top: 0;
@@ -190,7 +211,9 @@ nav #mhLinks a span {
 
 #page1 {
   width: 100%;
-  height: 100vh;
+  margin-top: 3rem;
+  height: calc(90vh - 3rem);
+  min-height: -webkit-fill-available;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -204,6 +227,8 @@ nav #mhLinks a span {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   row-gap: 2rem;
   color: #FEFEFE;
 }
@@ -215,6 +240,7 @@ nav #mhLinks a span {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  margin-top: 2rem;
 }
 #page1 #page1Txt p {
   opacity: 0;
@@ -227,24 +253,37 @@ nav #mhLinks a span {
 #page1 #page1Txt p span {
   color: red;
 }
-#page1 #Csvg1 {
+#page1 #svgContainer {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+#page1 #svgContainer #Csvg1 {
   height: 20rem;
   width: auto;
   overflow: visible;
 }
-#page1 #Csvg1 #shieldSVG1 {
+#page1 #svgContainer #Csvg1 #shieldSVG1 {
+  -webkit-transform-origin: center center !important;
+          transform-origin: center center !important;
   opacity: 0;
 }
-#page1 #Csvg1 #shieldSVG1 image {
+#page1 #svgContainer #Csvg1 #shieldSVG1 image {
   opacity: 0;
 }
-#page1 #Csvg1 #sen {
+#page1 #svgContainer #Csvg1 #sen {
   opacity: 0;
 }
-#page1 #Csvg1 #all {
+#page1 #svgContainer #Csvg1 #all {
   opacity: 1;
 }
-#page1 #Csvg1 #all path {
+#page1 #svgContainer #Csvg1 #all path {
   fill: none;
   stroke: #eee;
 }
@@ -275,9 +314,12 @@ nav #mhLinks a span {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+#page2 .title {
   opacity: 0;
 }
 #page2 .pContent {
+  opacity: 0;
   gap: 2rem;
 }
 #page2 #page2Txt {
@@ -737,10 +779,6 @@ footer #foot2 #footSVG svg {
   cursor: pointer;
   -webkit-transition: 500ms;
   transition: 500ms;
-  fill: white;
-}
-footer #foot2 #footSVG svg path {
-  fill: white;
 }
 footer #foot2 #footTxt p {
   margin: 0;

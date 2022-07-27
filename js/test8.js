@@ -1,5 +1,4 @@
-document.body.scrollTop = 0
-document.documentElement.scrollTop = 0;
+document.body.scrollTop = 0;document.documentElement.scrollTop = 0;
 
 particlesJS.load('particles-js', './jsons/particle.json', function() {
     console.log('callback - particles.js config loaded');
@@ -134,28 +133,28 @@ gsap.timeline()
     .to("#page1Txt p",{opacity : 1,duration : 2,stagger : 0.6},"<2")
     .to("#all",{opacity : 0,duration : 1})
     .to("#shieldSVG1,#sen",{opacity : 1,duration : 1},"<")
-    // .fromTo("#scrollD path",{
-    //     strokeDasharray : (i,t)=>{
-    //         return t.getTotalLength()
-    //     },
-    //     strokeDashoffset : (i,t)=>{
-    //         return t.getTotalLength()
-    //     }
-    // },{
-    //     // delay : 0.3,
-    //     duration : 2,
-    //     strokeDashoffset : 0,
-    //     ease : Power2.easeInOut
-    // })
-    // .from("#scrollD path",{fill : "transparent",duration : 0.5})
-    // .to("#scrollD",{y : 10,duration : 0.7,yoyoEase : Power4.easeNone,yoyo : true,repeat : -1})
+    .fromTo("#scrollD path",{
+        strokeDasharray : (i,t)=>{
+            return t.getTotalLength()
+        },
+        strokeDashoffset : (i,t)=>{
+            return t.getTotalLength()
+        }
+    },{
+        // delay : 0.3,
+        duration : 2,
+        strokeDashoffset : 0,
+        ease : Power2.easeInOut
+    })
+    .from("#scrollD path",{fill : "transparent",duration : 0.5})
+    .to("#scrollD",{y : 10,duration : 0.7,yoyoEase : Power4.easeNone,yoyo : true,repeat : -1})
     
 
 gsap.timeline({
     scrollTrigger : {
         trigger : "#shieldSVG1",
-        endTrigger : "#page2",
-        end : "center center",
+        endTrigger : "#page2 #shieldDiv",
+        end : "top center",
         start : "center center",
         // markers : true,
         // scroller : "#people",
@@ -167,11 +166,13 @@ gsap.timeline({
     }
     })
     .to("#shieldSVG1",{
-        y : shieldDiv.offsetTop + svgContainer.offsetHeight*2 + 120,
+        y : shieldDiv.offsetTop + shieldSVG1.getBoundingClientRect().height * 2,
         duration : 10,
     })
+    .to(tlogo,{opacity : 1 , duration : 1})
+    .to("#scrollD",{opacity : 0,duration : 1},"<")
+    .to("#page2 .title,#page2 .pContent",{opacity : 1,duration : 2,stagger : 1},"<")
     .to("#shieldSVG1 image",{opacity : 1,duration : 1})
-    .to("#page2",{opacity : 1,duration : 1,delay : 1})
 
 gsap.timeline({
     scrollTrigger : {
@@ -190,7 +191,7 @@ gsap.timeline({
     .from(".title1",{y : "50vh",duration : 10})
     .from(".title1 h1",{fontSize : "8rem",duration : 10},"<")
     // .to("#hashTags",{opacity : 0,duration : 2})
-    .to("#gyan p",{opacity : 1,duration : 1})
+    .to("#gyan p",{opacity : 1,duration : 1},"5")
     .to(".hid1",{opacity : 1,duration : 3,stagger: 1})
     // .to("#page4 .title1 h1",{fontSize : "2rem",duration : 2,delay : "3.6"})
     // .to("#page4 .title1 tt",{fontSize : "1rem",duration : 0.5},"<0.5")
@@ -199,17 +200,6 @@ gsap.timeline({
     // .to("#page4",{,duration : 1})
 
 
-// ScrollTrigger.create({
-//     trigger : ".title1",
-//     // scroller  : "#pages",
-//     animation : p4TimeLine,
-//     start : "center center",
-//     // markers : true,
-//     scrub : true,
-//     pin : "#page4",
-//     toggleActions : "restart pause reverse pause",
-//     // onEnterBack : updateAboutImg,
-// })
 
 
 

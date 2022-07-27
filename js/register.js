@@ -112,6 +112,7 @@ function setSep(c){
     }else{
         spec.innerHTML = '<option value="" disabled selected>Specialisations</option>'
     }
+    $(spec).niceSelect('update')
 }
 setSep()
 
@@ -219,6 +220,8 @@ function disError(e){
 
 
 window.onload = ()=>{
+    form.reset()
+    $('select').niceSelect()
     form.reset()
 }
 

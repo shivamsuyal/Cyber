@@ -296,6 +296,9 @@ form .fgp label {
      -moz-column-gap: 0.5rem;
           column-gap: 0.5rem;
 }
+form .fgp input[type=date] {
+  text-transform: uppercase;
+}
 form .fgp input, form .fgp select {
   background-color: transparent;
   font-family: "Open Sans";
@@ -311,10 +314,6 @@ form .fgp input:focus, form .fgp select:focus {
 form .fgp select {
   background-color: #323645;
   font-family: "Open Sans" !important;
-}
-form .fgp select option {
-  font-family: "Open Sans" !important;
-  letter-spacing: 0.5px;
 }
 form .fgp:nth-of-type(4) {
   -webkit-box-orient: vertical;
