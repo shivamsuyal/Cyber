@@ -451,7 +451,7 @@ window.onload = ()=>{
         }
     })
     .to(".o0",{opacity : 0,duration : 5})
-    .from(misCARD,{y : "-200%",duration : 5},"<")
+    .from(misCARD,{y : -((misCARD.offsetParent.offsetTop + misCARD.offsetTop) - document.querySelector(".o0").offsetTop),duration : 5},"<")
     // .to(".headSVG circle",{
     //     duration : 10,
     //     immediateRender: true,
