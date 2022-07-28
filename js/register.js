@@ -221,7 +221,11 @@ function disError(e){
 
 window.onload = ()=>{
     form.reset()
-    $('select').niceSelect()
+    try {
+        $('select').niceSelect()
+    } catch (error) {
+        console.log("No Errors")
+    }
     form.reset()
 }
 
