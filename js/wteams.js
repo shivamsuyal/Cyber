@@ -169,7 +169,7 @@ gsap.timeline({
         toggleActions : "restart pause reverse pause",
     }
 })
-.from("#heads",{opacity : 0, duration : 10})
+.from(".o1",{opacity : 0, duration : 10})
 .to("#t",{opacity : 0, duration : 10},"<")
 
 gsap.timeline({
@@ -184,8 +184,8 @@ gsap.timeline({
         toggleActions : "restart pause reverse pause",
     }
 })
-.from("#mis",{opacity : 0, duration : 10})
-.to("#heads",{opacity : 0, duration : 10},"<")
+// .from("#mis",{opacity : 0, duration : 10})
+// .to("#heads",{opacity : 0, duration : 10},"<")
 
 
 
@@ -255,7 +255,7 @@ connectSVG(document.querySelector("#sec").children[0],document.querySelector("#t
 document.querySelectorAll("#heads .cardContainer").forEach(e=>{
     connectSVG(document.querySelector("#t").children[0],e,"headSVG")
 })
-connectSVG(document.querySelector("#heads").children[2],document.querySelector("#mis").children[0].children[0],"",1)
+// connectSVG(document.querySelector("#heads").children[2],document.querySelector("#mis").children[0].children[0],"",1)
 
 
 
@@ -283,9 +283,9 @@ window.onload = ()=>{
         e.style.strokeDashoffset = e.getTotalLength() + 'px'  
     })
 
-    p10 = document.querySelector("#line10 path")
-    p10.style.strokeDasharray = p10.getTotalLength() + 'px' 
-    p10.style.strokeDashoffset = p10.getTotalLength() + 'px' 
+    // p10 = document.querySelector("#line10 path")
+    // p10.style.strokeDasharray = p10.getTotalLength() + 'px' 
+    // p10.style.strokeDashoffset = p10.getTotalLength() + 'px' 
     
     for(var i = 1; i < rows-1; i++){
         for(var j = 1; j < cols-1; j++ ){
@@ -431,32 +431,66 @@ window.onload = ()=>{
             alignOrigin: [0.5, 0.5]
         }
     },"<")
+    .to(".headSVG",{opacity : 0,duration : 3})
+
+
+    misCARD = document.querySelector("#mis .cardContainer")
 
     gsap.timeline({
         scrollTrigger : {
             trigger : "#heads",
+            endTrigger : "#mis",
+            end : "center center",
             start : "center center",
             scroller : "#people",
             // markers : true,
             scrub : true,
             // pin : true,
-            // pinType : 'transform',
+            // pinType : 'fixed',
             toggleActions : "restart pause reverse pause",
         }
     })
-    .to(p10,{duration : 10,strokeDashoffset:0})
-    .to("#line10 circle",{
-        duration : 10,
-        immediateRender: true,
-        motionPath:{
-            path: p10,
-            align: p10,
-            alignOrigin: [0.5, 0.5]
-        }
-    },"<")
+    .to(".o0",{opacity : 0,duration : 5})
+    .from(misCARD,{y : "-200%",duration : 5},"<")
+    // .to(".headSVG circle",{
+    //     duration : 10,
+    //     immediateRender: true,
+    //     motionPath:{
+    //         path: (i)=>{
+    //             return headSVG[i]
+    //         },
+    //         align: (i)=>{
+    //             return headSVG[i]
+    //         },
+    //         alignOrigin: [0.5, 0.5]
+    //     }
+    // },"<")
+
+    // gsap.timeline({
+    //     scrollTrigger : {
+    //         trigger : "#heads",
+    //         start : "center center",
+    //         scroller : "#people",
+    //         // markers : true,
+    //         scrub : true,
+    //         // pin : true,
+    //         // pinType : 'transform',
+    //         toggleActions : "restart pause reverse pause",
+    //     }
+    // })
+    // .to(p10,{duration : 10,strokeDashoffset:0})
+    // .to("#line10 circle",{
+    //     duration : 10,
+    //     immediateRender: true,
+    //     motionPath:{
+    //         path: p10,
+    //         align: p10,
+    //         alignOrigin: [0.5, 0.5]
+    //     }
+    // },"<")
 
     
-    misCARD = document.querySelector("#mis .cardContainer")
+    // misCARD.style.opacity = "0"
     gsap.timeline({
         scrollTrigger : {
             trigger : "#mis",
@@ -469,7 +503,8 @@ window.onload = ()=>{
             toggleActions : "restart pause reverse pause",
         }
     })
-    .to("#line10",{opacity : 0,duration : 1})
+    // .to(".o1",{opacity : 0})
+    // .from(misCARD,{opacity : 0},"<")
     .to(misCARD,
         {
             x : (misCARD.offsetLeft - 10) * -1,

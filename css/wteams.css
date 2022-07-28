@@ -209,6 +209,9 @@ body {
   height: var(--cardH) !important;
   width: var(--cardW) !important;
 }
+#people #heads .o0 {
+  opacity: 0;
+}
 #people #mis #misContain {
   position: relative;
   width: 100%;
