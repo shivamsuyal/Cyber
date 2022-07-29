@@ -1,0 +1,176 @@
+:root{
+    --breath : 40%;
+}
+
+#marker{
+    position: absolute;
+    top: 0;left : 0;right : 0; bottom: 0;
+    height: 10px;
+    width: 10px;
+    background-color: red;
+    z-index: 100000;
+    transition: 500ms;
+    visibility: hidden;
+}
+
+
+
+html,body{
+    margin: 0;
+    padding: 0;
+    /* Hide scrollbar */
+    &::-webkit-scrollbar {
+        display: none;
+    }
+    &{
+        -ms-overflow-style: none;  
+        scrollbar-width: none; 
+    } 
+    /* Hide scrollbar */
+}
+
+
+
+#people{
+    min-height: 100vh;
+    width: 100vw;
+    .pContainer{
+        background-color: cadetblue;
+        min-height: 100vh;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+}
+
+
+/* CARDS */
+$card-width : 130px;
+$card-height : 155px;
+$cardInfoColor : #fcfbf4;
+
+.cardContainer{
+    background-color: $cardInfoColor;
+    border-radius: 1rem;
+    overflow: hidden;
+    max-width: $card-width;;
+    .card{
+        box-shadow: inset 0 0 15px 1px #000000, 0 1px 10px 0px black;
+        position: relative;
+        box-sizing: border-box;
+        width: $card-width;
+        height: $card-height;
+        min-height: $card-height;
+        max-height: $card-height;
+        margin: 0;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        align-items: flex-end;
+        &:hover{
+            .fImg{
+                border-radius: 3rem;
+                box-shadow: 0 0 20px black;
+                transform: scale(0.4) translateY(-5rem);
+            }
+            .cardBody .cardInfo p{
+                animation: tracking-in-expand 1200ms 700ms cubic-bezier(0.215, 0.610, 0.355, 1.000) both !important ;
+            }
+            &~.cname{
+                background-color: lightgrey;
+                opacity: 0.5;
+            }
+        }
+        .bImg{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: fill;
+            object-position: center;
+            filter: grayscale(100%) blur(1.5px);
+            pointer-events: none;
+        }
+        .cardBody{
+            height: 68%;
+            width: 100%;
+            display: grid;
+            grid-template-rows: 33% 66%;
+            .cardCircle{
+                transform: translateY(50%);
+                background-color: $cardInfoColor;    
+                clip-path: ellipse(50% 49% at 50% 50%);
+            }
+            .cardInfo{
+                background-color: $cardInfoColor;
+                top: 2px;
+                z-index: 10;
+                position: relative;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                p{
+                    margin: 0;
+                    padding: 0;
+                    font-family: 'Comfortaa';
+                    margin-top: 1rem;
+                    font-size: 1.5rem;
+                    text-align: center;
+                    opacity: 0;
+                    animation: tracking-out-contract 0.7s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+                    transition: all 1000ms;
+                }
+                .links{
+                    height: 100%;
+                    display: flex;
+                    justify-content: space-around;
+                    align-items: center;
+                    svg{
+                        margin: 0;
+                        height: 2.5rem;
+                        width: auto;
+                        padding-bottom: 0.4rem;
+                        border-bottom: 3px solid black;
+                        cursor: pointer;
+                        &:hover{
+                            animation: jello-horizontal 0.9s both;
+                        }
+                    }
+                }
+            }
+            .fImg{
+                position: absolute;
+                top: 0;bottom: 0;left: 0;right:0;
+                z-index: 20;
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+                object-position: center;
+                transition: all 1000ms;
+                pointer-events: none;
+            }
+        }
+    }  
+    .cname{
+        padding: 0.5rem 0 1rem 0;
+        p{
+            color: #000000;
+            margin: 0;
+            text-align: center;
+        }
+        transition: all 700ms;
+
+    }
+}
+/* CARDS */
+
+
+
+
+
+
+
+

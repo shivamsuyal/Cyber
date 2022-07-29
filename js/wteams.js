@@ -17,6 +17,15 @@ setInterval(()=>{
 },100)
 /** Breathing */
 
+mark = document.getElementById("marker") 
+function marker(x,y){
+    mark.style.zIndex = "100000"
+    mark.style.opacity = "1"
+    mark.style.left = x - 5 + 'px'
+    mark.style.top = y - 5 + 'px'
+}
+
+
 document.documentElement.style.setProperty('--cardW', document.documentElement.offsetWidth/5-20+'px');
 document.documentElement.style.setProperty('--cardH', document.documentElement.offsetWidth/5-20+'px');
 
@@ -26,13 +35,7 @@ document.documentElement.style.setProperty('--cardAW', document.documentElement.
 const bugS = 20 //added extra
 const start = "center 30%"
 const dur = 40
-mark = document.getElementById("marker") 
-function marker(x,y){
-    mark.style.zIndex = "100000"
-    mark.style.opacity = "1"
-    mark.style.left = x - 5 + 'px'
-    mark.style.top = y - 5 + 'px'
-}
+
 
 
 const screenW = document.body.offsetWidth 
