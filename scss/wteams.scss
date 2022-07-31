@@ -260,6 +260,11 @@ body{
             display: flex;
             justify-content: center;
             align-items: center;
+            .card{
+                flex: none;
+                height: var(--cardH) !important;
+                width: var(--cardW) !important;
+            }
         }
         #misTxt{
             position: absolute;

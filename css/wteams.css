@@ -226,6 +226,13 @@ body {
       -ms-flex-align: center;
           align-items: center;
 }
+#people #mis #misContain .card {
+  -webkit-box-flex: 0;
+      -ms-flex: none;
+          flex: none;
+  height: var(--cardH) !important;
+  width: var(--cardW) !important;
+}
 #people #mis #misTxt {
   position: absolute;
   z-index: -10;
