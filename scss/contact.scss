@@ -259,6 +259,12 @@ body{
 }
 
 @media only screen and (max-width: 600px) {
+    #p5Txt{
+        height: fit-content !important;
+    }
+    #p5BG{
+        height: 70vh;
+    }
     #page5{
         grid-template-columns: 100%;
         padding: 0;

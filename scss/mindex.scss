@@ -1,5 +1,8 @@
 $highlight-color-1 : #01FFFF;
 $highlight-color-2 : #3FFF00;
+$header-color : #1a1a1a;
+$nav-color : #3F53A4;
+
 
 @font-face {
     font-family: 'Guardians' ;
@@ -19,6 +22,7 @@ html,body{
     } 
     /* Hide scrollbar */
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 $text-color-1 : #FEFEFE;
@@ -38,115 +42,142 @@ body{
     // background-color: chocolate;
     z-index: -10000;
 }
-
-$svg-height : 3rem;
-#tops{
+#toTop{
     position: fixed;
+    z-index: 2;
+    $pos : 0.5rem;
+    bottom: $pos;right: $pos;
+    background-color: grey;
     display: flex;
-    width: 100vw;
-    justify-content: space-between;
-    // background-color: $background-color;
-    box-sizing: border-box;
-    padding: 0 0.5rem;
-    z-index: 500;
-    #tlogo{
-        top : 0.5rem ;left: 0.5rem;
-        height: 4rem;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.3rem;
+    opacity: 0;
+    transition: 300ms;
+    svg{
+        fill: white;
+        height: 2rem;
         width: auto;
-        opacity: 0;
-        cursor: pointer;
-    }
-    #mhSVG{
-        // position: fixed;
-        // top : 0.5 ;right: 0;
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-        background-color: transparent;
-        // height: 100%;
-        border-radius: 1rem;
-        opacity: 1;
-        transition: all 1000ms;
-        z-index: 500;
-        cursor: pointer;
-        &[data-open=false]{
-            opacity: 0.4;
-        }
-        $svg1-color : white;
-        svg{
-            height: $svg-height;
-            width: auto;
-            fill: $svg1-color;
-        }
-        .ham {
-            cursor: pointer;
-            -webkit-tap-highlight-color: transparent;
-            transition: transform 700ms;
-            -moz-user-select: none;
-            -webkit-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-        }
-        .hamRotate.active {
-            transform: rotate(45deg);
-            .top {
-                stroke-dashoffset: -98px;
-            }
-            .bottom {
-                stroke-dashoffset: -138px;
-            }
-        }
-        .line {
-            fill:none;
-            transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
-            stroke:$svg1-color;
-            stroke-width:5.5;
-            stroke-linecap:round;
-        }
-        .ham1{
-            .top {
-                stroke-dasharray: 40 139;
-            }
-            .bottom {
-                stroke-dasharray: 40 180;
-            }
-        }
     }
 }
 
+
+$svg-height : 3rem;
+
 nav{
     position: fixed;
-    top: 0;left :  0;right: 0;bottom : 0;
-    height: 100vh;
     width: 100vw;
-    background-color: rgba($color: #000000, $alpha: .5);
-    transition: clip-path 1s;
-    z-index: 50;
-    #mhLinks{
+    top: 0;
+    z-index: 10;
+    // flex-direction: column;
+    #nTops{
+        background-color: $header-color;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        // flex-direction: column;
+        #tlogo{
+            top : 0.5rem ;left: 0.5rem;
+            height: $svg-height;
+            width: auto;
+            cursor: pointer;
+            z-index: 1;
+        }
+        p{
+            margin: 0;
+            font-family: 'Roboto Mono';
+            color: white;
+            z-index: 1;
+        }
+        #mhSVG{
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            background-color: transparent;
+            border-radius: 1rem;
+            opacity: 1;
+            transition: all 1000ms;
+            z-index: 3;
+            cursor: pointer;
+            &[data-open=false]{
+                opacity: 0.4;
+            }
+            $svg1-color : white;
+            svg{
+                height: $svg-height;
+                width: auto;
+                fill: $svg1-color;
+            }
+            .ham {
+                cursor: pointer;
+                -webkit-tap-highlight-color: transparent;
+                transition: transform 700ms;
+                -moz-user-select: none;
+                -webkit-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+            }
+            .hamRotate.active {
+                transform: rotate(45deg);
+                .top {
+                    stroke-dashoffset: -98px;
+                }
+                .bottom {
+                    stroke-dashoffset: -138px;
+                }
+            }
+            .line {
+                fill:none;
+                transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+                stroke:$svg1-color;
+                stroke-width:5.5;
+                stroke-linecap:round;
+            }
+            .ham1{
+                .top {
+                    stroke-dasharray: 40 139;
+                }
+                .bottom {
+                    stroke-dasharray: 40 180;
+                }
+            }
+        }
+    }
+    #mhLinks1{
+        pointer-events: none;
         position: absolute;
-        background-color: #3F53A4;
-        clip-path: circle(0% at 50%);
         top: 0;left :  0;right: 0;bottom : 0;
         height: 100vh;
         width: 100vw;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        gap : 3rem;
-        a{
-            text-decoration: none;
-            color: $text-color-1;
-            font-family: 'Roboto Mono';
-            letter-spacing: 1px;
-            font-size: 1.5rem;
-            overflow: hidden;
-            // background-color: cadetblue;
-            span{
-                display: block;
-                height: 0%;
+        background-color: rgba($color: #000000, $alpha: .5);
+        transition: clip-path 1s;
+        z-index: 50;
+        #mhLinks2{
+            z-index: 2;
+            background-color: $nav-color;
+            clip-path: circle(0% at 50%);
+            top: 0;left :  0;right: 0;bottom : 0;
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap : 3rem;
+
+            a{
+                text-decoration: none;
+                color: $text-color-1;
+                font-family: 'Roboto Mono';
+                letter-spacing: 1px;
+                font-size: 1.5rem;
                 overflow: hidden;
-                text-transform: uppercase;
+                span{
+                    display: block;
+                    height: 0%;
+                    overflow: hidden;
+                    text-transform: uppercase;
+                }
             }
         }
     }

@@ -32,56 +32,33 @@ var c = Math.sqrt((a*a)+(b*b))
 // var mhLinksA = document.querySelectorAll("#mhLinks a")
 // var blurBG = document.getElementById("blurBG")
 var mhSVG = document.getElementById("mhSVG")
-var transition = 700
+const nav = document.querySelector("nav")
+
+
+const navTime = gsap.timeline({
+    onComplete : ()=>{
+        // document.body.style.overflow = "hidden"
+        mhLinks1.style.pointerEvents = "all"  
+    },
+    onReverseComplete : ()=>{
+        // document.body.style.overflow = "visible"
+        mhLinks1.style.pointerEvents = "none"  
+    }
+})
+.fromTo("#mhLinks1",{zIndex : -50,opacity : 0 },{zIndex : 2, opacity : 1,duration : 0.5})
+.to("#mhLinks2",{clipPath : "circle(50% at 50%)",duration : 0.5,ease : Power0.easeNone})
+.to("#mhLinks2 a span",{height : "100%",duration : 1,ease : Power4.easeNone,delay : 0.2,stagger : 0.1}).pause()
+
+
+
 
 mhSVG.onclick = ()=>{
     if(mhSVG.dataset.open == "true"){
         mhSVG.dataset.open = "false"
-        // nav.style.clipPath = "circle(0% at 50%)"
         navTime.reverse()
-        // navFill.ani = true
-        // close it
-        // mhLinksA.forEach(e=>{
-        //     e.style.opacity = "0"
-        // })
-        setTimeout(()=>{    
-            // mhSVG.classList.toggle("open") 
-            // mhSVG.style.height = "initial"
-            // mhLinks.style.height = "10%"
-            // mhLinks.style.borderRadius = "1rem"
-            mhSVG.style.borderRadius = "1rem"
-            // setTimeout(()=>{
-            //     // mhLinks.style.width = "0%"
-            //     // blurBG.style.opacity = "0"
-            //     // blurBG.style.zIndex = "-50"
-            // },transition)
-        },transition)
     }else{
-        // open it
-        // blurBG.style.opacity = "1"
-        // blurBG.style.zIndex = "50"
-        // mhLinksA.forEach(e=>{
-        //     e.style.opacity = "0"
-        // })
-        // mhLinks.style.transition = `all ${transition}ms`
-        // nav.style.clipPath = "circle(50% at 50%)"
         mhSVG.dataset.open = "true"
         navTime.play()
-        
-        // mhLinks.style.width = "100%"
-        setTimeout(()=>{
-            mhSVG.style.transition = `all ${transition*1.5}ms`
-            // mhLinks.style.height = "100%"
-            // // mhSVG.style.height = "100%"
-            // mhLinks.style.borderRadius = "0 0rem 0rem 0"
-            mhSVG.style.borderRadius = "0 0rem 0rem 0"
-            // mhSVG.classList.toggle("open")
-            // setTimeout(()=>{
-            //     mhLinksA.forEach(e=>{
-            //         e.style.opacity = "1"
-            //     })
-            // },transition)
-        },transition)
     }
 } 
 
@@ -111,10 +88,6 @@ mhSVG.onclick = ()=>{
 // }
 
 // gsap.ticker.add(drawShape)
-const navTime = gsap.timeline()
-.fromTo("nav",{zIndex : -50,opacity : 0 },{zIndex : 50, opacity : 1,duration : 0.5})
-.to("#mhLinks",{clipPath : "circle(50% at 50%)",duration : 0.5,ease : Power0.easeNone})
-.to("#mhLinks a span",{height : "100%",duration : 1,ease : Power4.easeNone,delay : 0.2,stagger : 0.1}).pause()
 
 
 gsap.timeline()
@@ -192,7 +165,7 @@ gsap.timeline({
     .from(".title1 h1",{fontSize : "8rem",duration : 10},"<")
     // .to("#hashTags",{opacity : 0,duration : 2})
     .to("#gyan p",{opacity : 1,duration : 1},"5")
-    .to(".hid1",{opacity : 1,duration : 3,stagger: 1})
+    .to(".hid1",{opacity : 1,duration : 3,stagger: 1},"<1")
     // .to("#page4 .title1 h1",{fontSize : "2rem",duration : 2,delay : "3.6"})
     // .to("#page4 .title1 tt",{fontSize : "1rem",duration : 0.5},"<0.5")
     // .to("#hashTags",{opacity : 0,duration : 0.5})
@@ -217,5 +190,12 @@ window.onload = ()=>{
     }).mount()
 }
 
-
+window.addEventListener('scroll',function(e) {
+    // console.log( document.documentElement.scrollTop)
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        toTop.style.opacity = "1"
+        return
+    }
+    toTop.style.opacity = "0"
+});
 

@@ -1,6 +1,35 @@
 const RESTAPI = "http://192.168.29.130:4444/api/addUser/"
 // const RESTAPI = "http://localhost:4444/api/addUser/"
 
+const nav = document.querySelector("nav")
+
+
+const navTime = gsap.timeline({
+    onComplete : ()=>{
+        mhLinks1.style.pointerEvents = "all"  
+    },
+    onReverseComplete : ()=>{
+        mhLinks1.style.pointerEvents = "none"  
+    }
+})
+.fromTo("#mhLinks1",{zIndex : -50,opacity : 0 },{zIndex : 2, opacity : 1,duration : 0.5})
+.to("#mhLinks2",{clipPath : "circle(50% at 50%)",duration : 0.5,ease : Power0.easeNone})
+.to("#mhLinks2 a span",{height : "100%",duration : 1,ease : Power4.easeNone,delay : 0.2,stagger : 0.1}).pause()
+
+
+
+mhSVG.onclick = ()=>{
+    if(mhSVG.dataset.open == "true"){
+        mhSVG.dataset.open = "false"
+        navTime.reverse()
+    }else{
+        mhSVG.dataset.open = "true"
+        navTime.play()
+    }
+} 
+
+
+
 function setSep(c){
     // var c = course.selectedOptions[0].innerText 
     if(c == 'SCHOOL OF DESIGN'){
@@ -112,7 +141,9 @@ function setSep(c){
     }else{
         spec.innerHTML = '<option value="" disabled selected>Specialisations</option>'
     }
-    $(spec).niceSelect('update')
+    try {
+        $(spec).niceSelect('update')
+    } catch (error) {}
 }
 setSep()
 

@@ -1,3 +1,13 @@
+$svg-height : 3rem;
+$text-color-1 : #FEFEFE;
+$nav-color : #3F53A4;
+$mainTxt-color : #FEFEFE;
+$svg-fill : #1D90F5;
+$label-color : grey;
+$mainTxt-size : 0.9rem;
+$group-color : #262626;
+$header-color : #1a1a1a;
+
 html,body{
     margin: 0;
     padding: 0;
@@ -11,8 +21,130 @@ html,body{
     } 
     /* Hide scrollbar */
     // padding-bottom: 100vh;
-
+    overflow-x: hidden;
 }
+
+
+nav{
+    position: fixed;
+    width: 100vw;
+    top: 0;
+    z-index: 10;
+    // flex-direction: column;
+    #nTops{
+        background-color: $header-color;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        // flex-direction: column;
+        #tlogo{
+            top : 0.5rem ;left: 0.5rem;
+            height: $svg-height;
+            width: auto;
+            cursor: pointer;
+            z-index: 1;
+        }
+        p{
+            margin: 0;
+            font-family: 'Roboto Mono';
+            color: white;
+            z-index: 1;
+        }
+        #mhSVG{
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            background-color: transparent;
+            border-radius: 1rem;
+            opacity: 1;
+            transition: all 1000ms;
+            z-index: 3;
+            cursor: pointer;
+            &[data-open=false]{
+                opacity: 0.4;
+            }
+            $svg1-color : white;
+            svg{
+                height: $svg-height;
+                width: auto;
+                fill: $svg1-color;
+            }
+            .ham {
+                cursor: pointer;
+                -webkit-tap-highlight-color: transparent;
+                transition: transform 700ms;
+                -moz-user-select: none;
+                -webkit-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+            }
+            .hamRotate.active {
+                transform: rotate(45deg);
+                .top {
+                    stroke-dashoffset: -98px;
+                }
+                .bottom {
+                    stroke-dashoffset: -138px;
+                }
+            }
+            .line {
+                fill:none;
+                transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+                stroke:$svg1-color;
+                stroke-width:5.5;
+                stroke-linecap:round;
+            }
+            .ham1{
+                .top {
+                    stroke-dasharray: 40 139;
+                }
+                .bottom {
+                    stroke-dasharray: 40 180;
+                }
+            }
+        }
+    }
+    #mhLinks1{
+        pointer-events: none;
+        position: absolute;
+        top: 0;left :  0;right: 0;bottom : 0;
+        height: 100vh;
+        width: 100vw;
+        background-color: rgba($color: #000000, $alpha: .5);
+        transition: clip-path 1s;
+        #mhLinks2{
+            z-index: 2;
+            background-color: $nav-color;
+            clip-path: circle(0% at 50%);
+            top: 0;left :  0;right: 0;bottom : 0;
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap : 3rem;
+
+            a{
+                text-decoration: none;
+                color: $text-color-1;
+                font-family: 'Roboto Mono';
+                letter-spacing: 1px;
+                font-size: 1.5rem;
+                overflow: hidden;
+                span{
+                    display: block;
+                    height: 0%;
+                    overflow: hidden;
+                    text-transform: uppercase;
+                }
+            }
+        }
+    }
+}
+
+
+
 
 #errorDiv{
     position: fixed;
@@ -88,11 +220,7 @@ body{
 }
 
 
-$mainTxt-color : #FEFEFE;
-$svg-fill : #1D90F5;
-$label-color : grey;
-$mainTxt-size : 0.9rem;
-$group-color : #262626;
+
 
 #container{
     width: 100%;
@@ -100,7 +228,7 @@ $group-color : #262626;
     height: fit-content;
     margin-bottom: 1rem;
     overflow-x: hidden;
-
+    margin-top: $svg-height;
     // background-color: cadetblue;
     #txt{
         margin: 1.5rem 0 0 1rem;
