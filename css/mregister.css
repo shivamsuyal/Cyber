@@ -4,6 +4,7 @@ html, body {
   /* Hide scrollbar */
   /* Hide scrollbar */
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 html::-webkit-scrollbar, body::-webkit-scrollbar {
   display: none;
