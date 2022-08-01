@@ -185,7 +185,7 @@ nav #mhLinks1 {
 }
 nav #mhLinks1 #mhLinks2 {
   z-index: 2;
-  background-color: #3F53A4;
+  background-color: #008eff;
   -webkit-clip-path: circle(0% at 50%);
           clip-path: circle(0% at 50%);
   top: 0;
