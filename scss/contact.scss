@@ -35,6 +35,15 @@ body{
     background-color: white;
     z-index: 10;
     padding-bottom: 1rem;
+    /* Hide scrollbar */
+    &::-webkit-scrollbar {
+        display: none;
+    }
+    &{
+        -ms-overflow-style: none;  
+        scrollbar-width: none; 
+    } 
+    /* Hide scrollbar */
     #p5BG{
         position: absolute;
         top : 0;left: 0; bottom: 0; right: 0;
@@ -150,7 +159,8 @@ body{
         }
         #info{
             width: 30%;
-            padding: 0 0 0 0.5rem;
+            padding: 0 0.5rem ;
+            box-sizing: border-box;
             background-color: #272E41;
             color: #dfdfdd;
             display: flex;
@@ -218,21 +228,31 @@ body{
             }
             .info3{
                 flex: 1;
-                width: 100%;
+                // width: 100%;
                 // height: 100%;
                 box-sizing: border-box;
                 display: flex;
                 // justify-content: flex-end;
-                padding-bottom: 1rem;
+                // padding-bottom: 1rem;
                 align-items: flex-end;
-                img{
+                overflow:hidden;
+                padding-bottom:56.25%;
+                // padding-right: 0.25rem;
+                position:relative;
+                height:0;
+                iframe{
                     // display: none;
-                    height: auto;
-                    width: 95%;
-                    object-fit: contain;
-                    // padding: 0 0.5rem;
-                    margin: 0  0 0 0.25rem;
-                    border-radius: 0.6rem;
+                    // height: auto;
+                    // width: 95%;
+                    // object-fit: contain;
+                    // // padding: 0 0.5rem;
+                    // margin: 0  0.25rem 0 0;
+                    // border-radius: 0.6rem;
+                    left:0;
+                    top:0;
+                    height:100%;
+                    width:100%;
+                    position:absolute;
                 }
             }
         }
@@ -251,9 +271,9 @@ body{
         height: fit-content !important;
         #info{
             width: 100% !important;
-            .info3 img{
-                width: 90% !important;
-            }
+            // .info3 img{
+            //     width: 90% !important;
+            // }
         }
     }
 }
@@ -263,13 +283,16 @@ body{
         height: fit-content !important;
     }
     #p5BG{
-        height: 70vh;
+        height: 70vh !important;
     }
     #page5{
         grid-template-columns: 100%;
         padding: 0;
         #ContactUS{
+            width: 100vw !important;
             flex-direction: column;
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
             form{
                 width: 100%;
                 transform: scale(0.8);
@@ -282,11 +305,11 @@ body{
             }
         } 
         
-        #map{
-            img{
-                height: 100%;
-            }
-        }
+        // #map{
+        //     img{
+        //         height: 100%;
+        //     }
+        // }
     }
 }
 @media only screen and (max-width: 487px) {
@@ -294,6 +317,9 @@ body{
         margin: 0 !important;
         text-align: center;
         width: 100vw;
+    }
+    .info3{
+        padding-bottom:80.25%;
     }
 }
 /* RESPONSIVE */

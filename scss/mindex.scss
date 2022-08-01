@@ -42,6 +42,17 @@ body{
     // background-color: chocolate;
     z-index: -10000;
 }
+
+#depth{
+    position: fixed;
+    top: 0;left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    background-color: rgba($color: #000000, $alpha: 0.5);
+    z-index: -200;
+}
+
 #toTop{
     position: fixed;
     z-index: 2;
@@ -70,8 +81,9 @@ nav{
     top: 0;
     z-index: 10;
     // flex-direction: column;
+    backdrop-filter: blur(2px);
     #nTops{
-        background-color: $header-color;
+        background-color: rgba($header-color,0.7);
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -190,6 +202,7 @@ nav{
     max-width: 100vw;
     min-height: 200vh;
     overflow-x: hidden;
+    padding-top: $svg-height;
     // padding-top: 3rem;
     // pointer-events: none;
     // background-color: aquamarine;

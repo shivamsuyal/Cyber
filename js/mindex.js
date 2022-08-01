@@ -140,9 +140,10 @@ gsap.timeline({
     })
     .to("#shieldSVG1",{
         y : shieldDiv.offsetTop + shieldSVG1.getBoundingClientRect().height * 2,
+        scale : 1.2,
         duration : 10,
     })
-    .to(tlogo,{opacity : 1 , duration : 1})
+    .from("#tlogo,#nTops p",{opacity : 0 , duration : 1})
     .to("#scrollD",{opacity : 0,duration : 1},"<")
     .to("#page2 .title,#page2 .pContent",{opacity : 1,duration : 2,stagger : 1},"<")
     .to("#shieldSVG1 image",{opacity : 1,duration : 1})

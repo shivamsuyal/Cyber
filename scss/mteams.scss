@@ -6,7 +6,9 @@ $header-color : #1a1a1a;
 $svg-height : 3rem;
 $nav-color : #3F53A4;
 
-
+:root{
+    --rot : 0deg;
+}
 
 html,body{
     margin: 0;
@@ -40,13 +42,16 @@ nav{
     width: 100%;
     top: 0;
     z-index: 10;
-    height: $svg-height;
+    // height: calc($svg-height*2);
+    backdrop-filter: blur(2px);
     // flex-direction: column;
     #nTops{
-        background-color: $header-color;
+        // height: fit-content;
+        background-color: rgba($header-color,0.7);
         display: flex;
         justify-content: space-between;
         align-items: center;
+        flex-wrap: wrap;
         // flex-direction: column;
         #tlogo{
             top : 0.5rem ;left: 0.5rem;
@@ -114,6 +119,23 @@ nav{
                 }
             }
         }
+        h1{
+            flex: none;
+            font-family: 'Quicksand';
+            text-align: center;
+            // position: fixed;
+            // top:calc($svg-height/2);
+            width: 100vw;
+            text-align: center;
+            color: white;
+            box-sizing: border-box;
+            z-index: 1;
+            margin: 0 0 0.5rem 0;
+            // background-color: #01FFFF;
+            // background-color: rgba($BG-color,0.7);
+            // backdrop-filter: blur(2px);
+            // margin-bottom: 1rem;
+        }
     }
     #mhLinks1{
         pointer-events: none;
@@ -177,7 +199,8 @@ nav{
         box-sizing: border-box;
         z-index: 1;
         // background-color: #01FFFF;
-        background-color: $BG-color;
+        background-color: rgba($BG-color,0.7);
+        backdrop-filter: blur(2px);
         // margin-bottom: 1rem;
     }
     #teamTxt{
@@ -200,36 +223,62 @@ nav{
     margin-bottom: 4rem;
 }
 
-.box:before {
-    content: "";
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background: linear-gradient(to top left, #fc00ff 0%, #00dbde 100% );
-    // transform: translate3d(0px, -1px, 0) scale(0.95);
-    filter: blur(20px);
-    opacity: 0.7;
-    transition: opacity 0.3s;
-    border-radius: inherit;
+// .box:before {
+//     content: "";
+//     width: 100%;
+//     height: 100%;
+//     z-index: -1;
+//     position: absolute;
+//     top: 0;
+//     right: 0;
+//     bottom: 0;
+//     left: 0;
+//     background: linear-gradient(var(--rot), #fc00ff 0%, #00dbde 100% );
+//     // transform: translate3d(0px, -1px, 0) scale(0.95);
+//     filter: blur(20px);
+//     opacity: 0.7;
+//     transition: opacity 0.3s;
+//     border-radius: inherit;
+// }
+
+// .box::after {
+//     content: "";
+//     z-index: -1;
+//     position: absolute;
+//     top: 0;
+//     right: 0;
+//     bottom: 0;
+//     left: 0;
+//     background: inherit;
+//     border-radius: inherit;
+// }
+       
+.box{
+    position: relative;
+    // overflow: hidden;
+    // padding: 0.1rem;
+    &::after,&::before{
+        content: '';
+        position: absolute;
+        // background-color: #f00;
+        background: linear-gradient(var(--rot),#00ccff,#0e1538,#0e1538,#d400d4);
+        z-index: -10;
+        border-radius: $border;
+        // animation: rotate-gradient linear 1s infinite;
+    }
+    &::before{
+        inset: -2px;
+    }
+    &::after{
+        inset: -5px;
+        filter: blur(6px);
+    }
 }
 
-.box::after {
-    content: "";
-    z-index: -1;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background: inherit;
-    border-radius: inherit;
+@keyframes rotate-gradient {
+    to { transform: rotate(360deg) }
 }
-        
+
 .container{
     min-height: 100vh;
     width: 100vw;

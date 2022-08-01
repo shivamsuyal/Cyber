@@ -30,9 +30,10 @@ nav{
     width: 100vw;
     top: 0;
     z-index: 10;
+    backdrop-filter: blur(2px);
     // flex-direction: column;
     #nTops{
-        background-color: $header-color;
+        background-color: rgba($header-color,0.7);
         display: flex;
         justify-content: space-between;
         align-items: center;

@@ -18,9 +18,11 @@ nav {
   width: 100vw;
   top: 0;
   z-index: 10;
+  -webkit-backdrop-filter: blur(2px);
+          backdrop-filter: blur(2px);
 }
 nav #nTops {
-  background-color: #1a1a1a;
+  background-color: rgba(26, 26, 26, 0.7);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

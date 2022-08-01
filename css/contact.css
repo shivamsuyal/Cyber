@@ -28,6 +28,15 @@ html, body {
   background-color: white;
   z-index: 10;
   padding-bottom: 1rem;
+  /* Hide scrollbar */
+  /* Hide scrollbar */
+}
+#page5::-webkit-scrollbar {
+  display: none;
+}
+#page5 {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 #page5 #p5BG {
   position: absolute;
@@ -175,7 +184,9 @@ html, body {
 }
 #page5 #ContactUS #info {
   width: 30%;
-  padding: 0 0 0 0.5rem;
+  padding: 0 0.5rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   background-color: #272E41;
   color: #dfdfdd;
   display: -webkit-box;
@@ -266,24 +277,25 @@ html, body {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
-  width: 100%;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding-bottom: 1rem;
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  position: relative;
+  height: 0;
 }
-#page5 #ContactUS #info .info3 img {
-  height: auto;
-  width: 95%;
-  -o-object-fit: contain;
-     object-fit: contain;
-  margin: 0 0 0 0.25rem;
-  border-radius: 0.6rem;
+#page5 #ContactUS #info .info3 iframe {
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
 }
 
 /* RESPONSIVE */
@@ -301,9 +313,6 @@ html, body {
   #ContactUS #info {
     width: 100% !important;
   }
-  #ContactUS #info .info3 img {
-    width: 90% !important;
-  }
 }
 @media only screen and (max-width: 600px) {
   #p5Txt {
@@ -312,17 +321,20 @@ html, body {
     height: fit-content !important;
   }
   #p5BG {
-    height: 70vh;
+    height: 70vh !important;
   }
   #page5 {
     grid-template-columns: 100%;
     padding: 0;
   }
   #page5 #ContactUS {
+    width: 100vw !important;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
   }
   #page5 #ContactUS form {
     width: 100%;
@@ -334,15 +346,15 @@ html, body {
     height: 2px;
     background-color: white;
   }
-  #page5 #map img {
-    height: 100%;
-  }
 }
 @media only screen and (max-width: 487px) {
   #p5Txt p {
     margin: 0 !important;
     text-align: center;
     width: 100vw;
+  }
+  .info3 {
+    padding-bottom: 80.25%;
   }
 }
 /* RESPONSIVE */

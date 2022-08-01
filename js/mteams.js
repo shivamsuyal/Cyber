@@ -17,6 +17,14 @@ setInterval(()=>{
 },100)
 /** Breathing */
 
+let rot = 0
+setInterval(()=>{
+    rot = (rot + 1)%361 
+    document.documentElement.style.setProperty('--rot', rot +"deg");
+},15)
+
+
+
 mark = document.getElementById("marker") 
 function marker(x,y){
     mark.style.zIndex = "100000"
